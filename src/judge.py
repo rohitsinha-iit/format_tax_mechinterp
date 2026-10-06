@@ -133,21 +133,31 @@ def run(args):
         log("nothing to judge", logfile)
         return
 
-    class A:  # engine overrides, same knobs as generation
-        max_num_seqs = args.max_num_seqs or judge_info["max_num_seqs"]
-        gpu_mem = args.gpu_mem
-    A.max_model_len = max_model_len
-    llm, ekw = make_llm(judge_info, A, logfile)
+    if args.backend == "vllm":
+        class A:  # engine overrides, same knobs as generation
+            max_num_seqs = args.max_num_seqs or judge_info["max_num_seqs"]
+            gpu_mem = args.gpu_mem
+        A.max_model_len = max_model_len
+        llm, ekw = make_llm(judge_info, A, logfile)
+    else:
+        # User decision (2026-10-06): Qwen3-8B NF4 does not fit in vLLM on this GPU, so the judge runs in
+        # HF transformers with the same bnb NF4 config, batch size 1, sampled with a per-item seed.
+        from src.hf_model import describe, load_hf
+        hf_model, _, _ = load_hf(judge_info["key"])
+        ekw = {"backend": "hf-transformers", "max_model_len": max_model_len, "batch_size": 1,
+               "hf_model": describe(hf_model)}
+        log(f"HF judge loaded: {ekw}", logfile)
     for seed, path, items in jobs:
         if not items:
             continue
         g = dict(temperature=jc["temperature"], top_p=jc["top_p"], top_k=jc["top_k"],
                  max_tokens=jc["max_tokens"], seed=seed)
-        sp = sampling_params(g)
+        sp = sampling_params(g) if args.backend == "vllm" else dict(g, do_sample=True)
         reqs = []
         w = JsonlWriter(path, {"judge_model": judge_info["hf_id"], "generator_tag": tag, "seed": seed,
                                "judge_template_sha256": JUDGE_TEMPLATE_SHA, "engine": ekw,
-                               "sampling_params": repr(sp), "selfcons": bool(args.selfcons)})
+                               "backend": args.backend,
+                               "sampling_params": repr(sp), "selfcons": bool(args.selfcons)}, flush_every=1)
         for r in items:
             b = build_request(tok, r, problems, ekw["max_model_len"], jc["max_tokens"])
             base = {"uid": r["uid"], "condition": r["condition"], "generator_tag": tag, "role": r["role"],
@@ -168,13 +178,46 @@ def run(args):
                          finish_reason=o.finish_reason, judge_output_tokens=len(o.token_ids),
                          gen_wall_s=round(wall, 3)))
 
-        log(f"judging {len(reqs)} items seed={seed} -> {path}", logfile)
-        st = stream_generate(llm, reqs, lambda it, sp=sp: sp, on_done, max_inflight=2 * ekw["max_num_seqs"],
-                             max_model_len=ekw["max_model_len"], logfile=logfile)
+        log(f"judging {len(reqs)} items seed={seed} backend={args.backend} -> {path}", logfile)
+        if args.backend == "vllm":
+            st = stream_generate(llm, reqs, lambda it, sp=sp: sp, on_done, max_inflight=2 * ekw["max_num_seqs"],
+                                 max_model_len=ekw["max_model_len"], logfile=logfile)
+        else:
+            st = hf_generate_loop(hf_model, tok, reqs, g, on_done, logfile)
         w.close()
         log(f"done seed={seed}: {st}", logfile)
     if args.selfcons:
         selfcons_report(tag, conds)
+
+
+def hf_generate_loop(model, tok, reqs, g, on_done, logfile) -> dict:
+    """Sequential (batch size 1) sampled generation; each item reseeded with g['seed'] so a verdict
+    is reproducible per item regardless of order. Produces vLLM-like outputs for on_done."""
+    import time
+    from types import SimpleNamespace
+    import torch
+    eos = [tok.convert_tokens_to_ids("<|im_end|>"), tok.convert_tokens_to_ids("<|endoftext|>")]
+    n, ntok, t_start = 0, 0, time.time()
+    for it in reqs:
+        ids = torch.tensor([it["prompt_ids"]], device=model.device)
+        torch.manual_seed(g["seed"])
+        t0 = time.time()
+        with torch.inference_mode():
+            out = model.generate(input_ids=ids, attention_mask=torch.ones_like(ids), do_sample=True,
+                                 temperature=g["temperature"], top_p=g["top_p"], top_k=g["top_k"],
+                                 max_new_tokens=g["max_tokens"], eos_token_id=eos, pad_token_id=eos[-1])
+        gen = out[0, ids.shape[1]:].tolist()
+        stopped = bool(gen) and gen[-1] in eos
+        body = gen[:-1] if stopped else gen
+        text = tok.decode(body, skip_special_tokens=True)  # <think>/</think> are not special: kept
+        o = SimpleNamespace(text=text, token_ids=body, finish_reason="stop" if stopped else "length")
+        on_done(it, SimpleNamespace(outputs=[o]), time.time() - t0)
+        n += 1; ntok += len(body)
+        if n % 10 == 0:
+            el = time.time() - t_start
+            log(f"  {n}/{len(reqs)} judged, {ntok / el:.1f} tok/s, {el / 60:.1f} min", logfile)
+    el = time.time() - t_start
+    return {"n": n, "out_tokens": ntok, "wall_s": el, "tok_per_s": ntok / max(el, 1e-9)}
 
 
 def selfcons_sample(pool: list[dict], n: int, seed: int) -> list[dict]:
@@ -220,6 +263,7 @@ if __name__ == "__main__":
     ap.add_argument("--conds", default="FF,JS,JC")
     ap.add_argument("--selfcons", action="store_true")
     ap.add_argument("--report-only", action="store_true")
+    ap.add_argument("--backend", default="hf", choices=["hf", "vllm"])
     ap.add_argument("--max-num-seqs", type=int, default=None)
     ap.add_argument("--gpu-mem", type=float, default=None)
     ap.add_argument("--max-model-len", type=int, default=None)
