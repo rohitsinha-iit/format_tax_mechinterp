@@ -17,20 +17,24 @@ SCHEMA = {
     },
     "required": ["reasoning", "answer"],
 }
-SCHEMA_STR = json.dumps(SCHEMA, indent=2)
+SCHEMA_STR = json.dumps(SCHEMA, indent=2)  # still used for JC constrained decoding (SCHEMA), not in prompts
 
-FORMAT_BLOCK = (
-    "Format your entire response as a single JSON object that conforms to the "
-    "following JSON Schema:\n```json\n" + SCHEMA_STR + "\n```\n"
+# Revised by the user on 2026-10-06 (v2): the v1 block embedded SCHEMA_STR in a ```json fence and
+# Qwen3-4B echoed the schema itself in 9/10 smoke outputs. See reports/DEVIATIONS.md (D5).
+FORMAT_SPEC = (
+    "Format your entire response as a single JSON object with exactly two keys, "
+    "in this order:\n"
+    "- \"reasoning\": a string containing your step-by-step reasoning\n"
+    "- \"answer\": a string containing only your final answer\n\n"
+    "Your output must have this shape:\n"
+    "{\"reasoning\": \"<your step-by-step reasoning>\", \"answer\": \"<your final answer>\"}\n\n"
     "Output only the JSON object, with no text before or after it."
 )
+FORMAT_BLOCK = FORMAT_SPEC
 
 REFORMAT_BLOCK = (
-    "Rewrite your previous response as a single JSON object that conforms to the "
-    "following JSON Schema:\n```json\n" + SCHEMA_STR + "\n```\n"
-    "Put your reasoning in \"reasoning\" and your final answer in \"answer\". "
-    "Do not change the final answer. "
-    "Output only the JSON object, with no text before or after it."
+    "Rewrite your previous response so that it follows the format below. "
+    "Do not change the final answer.\n\n" + FORMAT_SPEC
 )
 
 # Neutral control: appended text that is neither a format nor a length instruction.

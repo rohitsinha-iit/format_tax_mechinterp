@@ -17,9 +17,9 @@
  },
  "JS": {
   "n": 10,
-  "out_tokens": 960,
-  "wall_s": 13.284477949142456,
-  "tok_per_s": 72.26478930336665,
+  "out_tokens": 3946,
+  "wall_s": 93.86956810951233,
+  "tok_per_s": 42.03705289659397,
   "engine": {
    "model": "Qwen/Qwen3-4B",
    "quantization": "bitsandbytes",
@@ -33,9 +33,9 @@
  },
  "JC": {
   "n": 10,
-  "out_tokens": 5511,
-  "wall_s": 204.6328547000885,
-  "tok_per_s": 26.931159261189823,
+  "out_tokens": 3263,
+  "wall_s": 50.72318983078003,
+  "tok_per_s": 64.32955046569123,
   "engine": {
    "model": "Qwen/Qwen3-4B",
    "quantization": "bitsandbytes",

@@ -1,0 +1,18 @@
+[2026-10-06T08:53:16+00:00] judge qwen3-4b-nf4 FF: 143 items (103 mv_wrong, 40 calib); 0 done
+[2026-10-06T08:53:43+00:00] HF judge loaded: {'backend': 'hf-transformers', 'max_model_len': 4096, 'batch_size': 1, 'hf_model': {'num_hidden_layers': 36, 'hidden_size': 4096, 'tie_word_embeddings': False, 'quantization_config': {'quant_method': <QuantizationMethod.BITS_AND_BYTES: 'bitsandbytes'>, '_load_in_8bit': False, '_load_in_4bit': True, 'llm_int8_threshold': 6.0, 'llm_int8_skip_modules': None, 'llm_int8_enable_fp32_cpu_offload': False, 'llm_int8_has_fp16_weight': False, 'bnb_4bit_quant_type': 'nf4', 'bnb_4bit_use_double_quant': True, 'bnb_4bit_compute_dtype': 'bfloat16', 'bnb_4bit_quant_storage': 'uint8', 'load_in_4bit': True, 'load_in_8bit': False}, 'attn_implementation': 'sdpa', 'n_layers_module': 36}}
+[2026-10-06T08:53:46+00:00] judging 143 items seed=0 backend=hf -> /mnt/d/NeuriAI/Assignment3/q2/format-tax-mi/outputs/qwen3-4b-nf4/judge/e0_FF_judge_seed0.jsonl
+[2026-10-06T09:04:43+00:00]   10/143 judged, 13.1 tok/s, 11.0 min
+[2026-10-06T09:15:26+00:00]   20/143 judged, 13.3 tok/s, 21.7 min
+[2026-10-06T09:26:05+00:00]   30/143 judged, 13.1 tok/s, 32.3 min
+[2026-10-06T09:37:11+00:00]   40/143 judged, 13.1 tok/s, 43.4 min
+[2026-10-06T09:47:03+00:00]   50/143 judged, 13.2 tok/s, 53.3 min
+[2026-10-06T10:00:09+00:00]   60/143 judged, 13.2 tok/s, 66.4 min
+[2026-10-06T10:18:39+00:00]   70/143 judged, 13.2 tok/s, 84.9 min
+[2026-10-06T10:30:36+00:00]   80/143 judged, 13.2 tok/s, 96.8 min
+[2026-10-06T10:46:58+00:00]   90/143 judged, 13.2 tok/s, 113.2 min
+[2026-10-06T10:55:04+00:00]   100/143 judged, 13.2 tok/s, 121.3 min
+[2026-10-06T11:01:03+00:00]   110/143 judged, 13.2 tok/s, 127.3 min
+[2026-10-06T11:05:12+00:00]   120/143 judged, 13.2 tok/s, 131.4 min
+[2026-10-06T11:09:02+00:00]   130/143 judged, 13.2 tok/s, 135.3 min
+[2026-10-06T11:13:37+00:00]   140/143 judged, 13.1 tok/s, 139.9 min
+[2026-10-06T11:16:16+00:00] done seed=0: {'n': 143, 'out_tokens': 112404, 'wall_s': 8550.068846464157, 'tok_per_s': 13.146560807692698}

@@ -1,0 +1,18 @@
+{
+ "FF": {
+  "n": 440,
+  "out_tokens": 407258,
+  "wall_s": 3733.4470353126526,
+  "tok_per_s": 109.08364204660391,
+  "engine": {
+   "model": "Qwen/Qwen3-4B",
+   "quantization": "bitsandbytes",
+   "dtype": "bfloat16",
+   "max_model_len": 4096,
+   "gpu_memory_utilization": 0.8,
+   "enforce_eager": true,
+   "max_num_seqs": 8,
+   "seed": 0
+  }
+ }
+}

@@ -1,12 +1,9 @@
 {
- "format_block_tokens": 122,
- "neutral_block_tokens": 106,
+ "format_block_tokens": 85,
+ "neutral_block_tokens": 83,
  "neutral_original_tokens": 83,
- "ratio": 0.8688524590163934,
+ "ratio": 0.9764705882352941,
  "within_tol": true,
- "actions": [
-  "pad:The problems are presented without any hints.",
-  "pad:Some of the problems have appeared in more than one edition of the collection."
- ],
- "neutral_block": "Background note: This problem is taken from a large collection of exercises that has been used in mathematics courses and competitions for many years. The collection covers several areas, including algebra, geometry, number theory, counting and probability, intermediate algebra, and precalculus. Exercises in the collection range in difficulty from introductory questions to challenging competition problems. Each exercise was written and reviewed by experienced teachers before being added to the collection. The problems are presented without any hints. Some of the problems have appeared in more than one edition of the collection."
+ "actions": [],
+ "neutral_block": "Background note: This problem is taken from a large collection of exercises that has been used in mathematics courses and competitions for many years. The collection covers several areas, including algebra, geometry, number theory, counting and probability, intermediate algebra, and precalculus. Exercises in the collection range in difficulty from introductory questions to challenging competition problems. Each exercise was written and reviewed by experienced teachers before being added to the collection."
 }
