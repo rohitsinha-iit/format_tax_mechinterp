@@ -1,0 +1,11 @@
+[2026-10-06T06:39:47+00:00] loaded EleutherAI/hendrycks_math/algebra train: 1744 rows; fields=['problem', 'level', 'type', 'solution']
+[2026-10-06T06:39:54+00:00] loaded EleutherAI/hendrycks_math/counting_and_probability train: 771 rows; fields=['problem', 'level', 'type', 'solution']
+[2026-10-06T06:40:01+00:00] loaded EleutherAI/hendrycks_math/geometry train: 870 rows; fields=['problem', 'level', 'type', 'solution']
+[2026-10-06T06:40:20+00:00] loaded EleutherAI/hendrycks_math/intermediate_algebra train: 1295 rows; fields=['problem', 'level', 'type', 'solution']
+[2026-10-06T06:40:26+00:00] loaded EleutherAI/hendrycks_math/number_theory train: 869 rows; fields=['problem', 'level', 'type', 'solution']
+[2026-10-06T06:40:33+00:00] loaded EleutherAI/hendrycks_math/prealgebra train: 1205 rows; fields=['problem', 'level', 'type', 'solution']
+[2026-10-06T06:40:39+00:00] loaded EleutherAI/hendrycks_math/precalculus train: 746 rows; fields=['problem', 'level', 'type', 'solution']
+[2026-10-06T06:40:39+00:00] train pool: 7500 problems; dropped 0 overlapping MATH-500 (whitespace-normalised)
+[2026-10-06T06:40:40+00:00] extract_set n=300 by subject={'algebra': 70, 'counting_and_probability': 31, 'geometry': 35, 'intermediate_algebra': 52, 'number_theory': 34, 'prealgebra': 48, 'precalculus': 30}
+[2026-10-06T06:40:40+00:00] extract_set by level={'Level 1': 23, 'Level 2': 54, 'Level 3': 64, 'Level 4': 68, 'Level 5': 91}
+[2026-10-06T06:40:40+00:00] dev_set n=100 (ids only saved; reserved for E3)

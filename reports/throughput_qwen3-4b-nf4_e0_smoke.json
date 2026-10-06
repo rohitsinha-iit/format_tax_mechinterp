@@ -1,0 +1,50 @@
+{
+ "FF": {
+  "n": 10,
+  "out_tokens": 6898,
+  "wall_s": 132.39489650726318,
+  "tok_per_s": 52.10170619848308,
+  "engine": {
+   "model": "Qwen/Qwen3-4B",
+   "quantization": "bitsandbytes",
+   "dtype": "bfloat16",
+   "max_model_len": 4096,
+   "gpu_memory_utilization": 0.8,
+   "enforce_eager": true,
+   "max_num_seqs": 8,
+   "seed": 0
+  }
+ },
+ "JS": {
+  "n": 10,
+  "out_tokens": 960,
+  "wall_s": 13.284477949142456,
+  "tok_per_s": 72.26478930336665,
+  "engine": {
+   "model": "Qwen/Qwen3-4B",
+   "quantization": "bitsandbytes",
+   "dtype": "bfloat16",
+   "max_model_len": 4096,
+   "gpu_memory_utilization": 0.8,
+   "enforce_eager": true,
+   "max_num_seqs": 8,
+   "seed": 0
+  }
+ },
+ "JC": {
+  "n": 10,
+  "out_tokens": 5511,
+  "wall_s": 204.6328547000885,
+  "tok_per_s": 26.931159261189823,
+  "engine": {
+   "model": "Qwen/Qwen3-4B",
+   "quantization": "bitsandbytes",
+   "dtype": "bfloat16",
+   "max_model_len": 4096,
+   "gpu_memory_utilization": 0.8,
+   "enforce_eager": true,
+   "max_num_seqs": 8,
+   "seed": 0
+  }
+ }
+}

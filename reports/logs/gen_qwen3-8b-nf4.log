@@ -1,0 +1,8 @@
+[2026-10-06T06:51:22+00:00] qwen3-8b-nf4 e0 FF: 10 items, 0 done, 10 to run -> /mnt/d/NeuriAI/Assignment3/q2/format-tax-mi/outputs/qwen3-8b-nf4/smoke/e0_FF.jsonl
+[2026-10-06T06:51:22+00:00] qwen3-8b-nf4 e0 JS: 10 items, 0 done, 10 to run -> /mnt/d/NeuriAI/Assignment3/q2/format-tax-mi/outputs/qwen3-8b-nf4/smoke/e0_JS.jsonl
+[2026-10-06T06:51:22+00:00] qwen3-8b-nf4 e0 JC: 10 items, 0 done, 10 to run -> /mnt/d/NeuriAI/Assignment3/q2/format-tax-mi/outputs/qwen3-8b-nf4/smoke/e0_JC.jsonl
+[2026-10-06T06:51:26+00:00] vLLM engine kwargs: {'model': 'Qwen/Qwen3-8B', 'quantization': 'bitsandbytes', 'dtype': 'bfloat16', 'max_model_len': 4096, 'gpu_memory_utilization': 0.8, 'enforce_eager': True, 'max_num_seqs': 4, 'seed': 0}
+[2026-10-06T06:53:58+00:00] qwen3-8b-nf4 e0 FF: 10 items, 0 done, 10 to run -> /mnt/d/NeuriAI/Assignment3/q2/format-tax-mi/outputs/qwen3-8b-nf4/smoke/e0_FF.jsonl
+[2026-10-06T06:53:58+00:00] qwen3-8b-nf4 e0 JS: 10 items, 0 done, 10 to run -> /mnt/d/NeuriAI/Assignment3/q2/format-tax-mi/outputs/qwen3-8b-nf4/smoke/e0_JS.jsonl
+[2026-10-06T06:53:58+00:00] qwen3-8b-nf4 e0 JC: 10 items, 0 done, 10 to run -> /mnt/d/NeuriAI/Assignment3/q2/format-tax-mi/outputs/qwen3-8b-nf4/smoke/e0_JC.jsonl
+[2026-10-06T06:54:02+00:00] vLLM engine kwargs: {'model': 'Qwen/Qwen3-8B', 'quantization': 'bitsandbytes', 'dtype': 'bfloat16', 'max_model_len': 3584, 'gpu_memory_utilization': 0.86, 'enforce_eager': True, 'max_num_seqs': 2, 'seed': 0}

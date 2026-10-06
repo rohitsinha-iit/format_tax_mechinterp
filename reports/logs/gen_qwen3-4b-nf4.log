@@ -1,0 +1,15 @@
+[2026-10-06T06:42:06+00:00] qwen3-4b-nf4 e0 FF: 10 items, 0 done, 10 to run -> /mnt/d/NeuriAI/Assignment3/q2/format-tax-mi/outputs/qwen3-4b-nf4/smoke/e0_FF.jsonl
+[2026-10-06T06:42:06+00:00] qwen3-4b-nf4 e0 JS: 10 items, 0 done, 10 to run -> /mnt/d/NeuriAI/Assignment3/q2/format-tax-mi/outputs/qwen3-4b-nf4/smoke/e0_JS.jsonl
+[2026-10-06T06:42:06+00:00] qwen3-4b-nf4 e0 JC: 10 items, 0 done, 10 to run -> /mnt/d/NeuriAI/Assignment3/q2/format-tax-mi/outputs/qwen3-4b-nf4/smoke/e0_JC.jsonl
+[2026-10-06T06:42:09+00:00] vLLM engine kwargs: {'model': 'Qwen/Qwen3-4B', 'quantization': 'bitsandbytes', 'dtype': 'bfloat16', 'max_model_len': 4096, 'gpu_memory_utilization': 0.88, 'enforce_eager': True, 'max_num_seqs': 8, 'seed': 0}
+[2026-10-06T06:43:13+00:00] qwen3-4b-nf4 e0 FF: 10 items, 0 done, 10 to run -> /mnt/d/NeuriAI/Assignment3/q2/format-tax-mi/outputs/qwen3-4b-nf4/smoke/e0_FF.jsonl
+[2026-10-06T06:43:13+00:00] qwen3-4b-nf4 e0 JS: 10 items, 0 done, 10 to run -> /mnt/d/NeuriAI/Assignment3/q2/format-tax-mi/outputs/qwen3-4b-nf4/smoke/e0_JS.jsonl
+[2026-10-06T06:43:13+00:00] qwen3-4b-nf4 e0 JC: 10 items, 0 done, 10 to run -> /mnt/d/NeuriAI/Assignment3/q2/format-tax-mi/outputs/qwen3-4b-nf4/smoke/e0_JC.jsonl
+[2026-10-06T06:43:17+00:00] vLLM engine kwargs: {'model': 'Qwen/Qwen3-4B', 'quantization': 'bitsandbytes', 'dtype': 'bfloat16', 'max_model_len': 4096, 'gpu_memory_utilization': 0.8, 'enforce_eager': True, 'max_num_seqs': 8, 'seed': 0}
+[2026-10-06T06:44:15+00:00] effective quant config: {"quantization": "bitsandbytes", "checkpoint_quant_config": null, "inflight": {"vllm_bnb_plugin": "0.0.3", "inflight_calls": ["quantize_4bit( weight_tensor, compress_statistics=True, quant_type=\"nf4\", )", "quantize_4bit( loaded_weight, compress_statistics=True, quant_type=\"nf4\", )"], "quant_type": ["nf4"], "compress_statistics(double_quant)": ["True"], "bitsandbytes": "0.50.2", "blocksize": "bitsandbytes default (64) \u2014 no blocksize argument passed"}}
+[2026-10-06T06:44:15+00:00] generating qwen3-4b-nf4 e0 FF: 10 items
+[2026-10-06T06:46:28+00:00] finished qwen3-4b-nf4 e0 FF: {'n': 10, 'out_tokens': 6898, 'wall_s': 132.39489650726318, 'tok_per_s': 52.10170619848308}
+[2026-10-06T06:46:28+00:00] generating qwen3-4b-nf4 e0 JS: 10 items
+[2026-10-06T06:46:41+00:00] finished qwen3-4b-nf4 e0 JS: {'n': 10, 'out_tokens': 960, 'wall_s': 13.284477949142456, 'tok_per_s': 72.26478930336665}
+[2026-10-06T06:46:41+00:00] generating qwen3-4b-nf4 e0 JC: 10 items
+[2026-10-06T06:50:06+00:00] finished qwen3-4b-nf4 e0 JC: {'n': 10, 'out_tokens': 5511, 'wall_s': 204.6328547000885, 'tok_per_s': 26.931159261189823}
