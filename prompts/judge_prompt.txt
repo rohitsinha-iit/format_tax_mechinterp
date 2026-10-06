@@ -1,0 +1,24 @@
+You are checking whether a student's final answer to a math problem is mathematically equivalent to the reference answer.
+
+Problem:
+{problem}
+
+Reference answer:
+{gold}
+
+Student's extracted final answer (NONE if extraction failed):
+{candidate_str}
+
+End of the student's response (use this only to locate the final answer if the extracted answer is NONE or incomplete):
+{tail}
+
+Rules:
+- Judge only the student's FINAL answer, not the reasoning.
+- Answers are equivalent if they are mathematically equal (e.g., 1/2, 0.5 and \frac{1}{2}; equivalent simplified forms; the same set of solutions in any order). Ignore units and prefixes such as "x =" unless the problem explicitly requires a specific form.
+- If the student gives several different final answers, or no final answer, it is NOT equivalent.
+- Do not re-solve the problem to decide; compare against the reference answer.
+
+Respond with exactly one line in this format and nothing else:
+VERDICT: EQUIVALENT
+or
+VERDICT: NOT_EQUIVALENT

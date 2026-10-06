@@ -1,0 +1,6 @@
+acts/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.tmp
+outputs/**/smoke/

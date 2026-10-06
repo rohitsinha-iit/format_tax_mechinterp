@@ -1,0 +1,32 @@
+data:
+  train_source: EleutherAI/hendrycks_math
+  train_configs: [algebra, counting_and_probability, geometry, intermediate_algebra,
+                  number_theory, prealgebra, precalculus]
+  n_extract: 300
+  n_dev: 100
+  sample_seed: 0
+
+extraction_conditions: [FF, JS, NC, C1, C2, C3, D1, D2, D3]
+gen16:
+  conditions: [FF, JS]
+  max_tokens: 80
+  n_content_tokens: 16
+  js_scaffold_regex: '^\s*\{\s*"reasoning"\s*:\s*"'
+
+brevity_check:
+  n_problems: 50
+  max_tokens: 3072
+  max_ratio: 0.6
+
+directions:
+  null_draws: 1000
+  null_seed: 3
+  split_half_draws: 100
+  split_half_seed: 4             # not specified in handoff; logged
+  layer_window: [0.25, 0.85]     # L* = argmax over round(0.25L)..round(0.85L), P_last
+
+per_question:
+  bootstrap_resamples: 10000
+  bootstrap_seed: 0
+  random_directions: 1000
+  random_dir_seed: 5             # not specified in handoff; logged
