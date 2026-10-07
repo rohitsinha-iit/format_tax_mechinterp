@@ -22,7 +22,7 @@ MATH-500, n = 500, paired by uid. Label = math-verify, else the 8B thinking judg
 ## E1 — directions and H1
 
 - **Brevity check:** median tokens C₁/D₁ = 224.5 / 525.5 = **0.43** ≤ 0.6, PASS.
-- **Direction estimates:** the format direction f and the brevity direction b are highly reliable (split-half cos ≈ 0.999). The three brevity phrasings agree (cos(b⁽ʲ⁾, b⁽ᵏ⁾) ≈ 0.93 at L*). The neutral control is nearly orthogonal to b in middle/late layers (cos(c, b) ≈ −0.01 at L*).
+- **Direction estimates:** the format direction f and the brevity direction b are highly reliable (split-half cos ≈ 0.999). The three brevity phrasings agree (cos(b⁽ʲ⁾, b⁽ᵏ⁾) = 0.88–0.93 at L*). The neutral control is nearly orthogonal to b in middle/late layers (cos(c, b) ≈ −0.01 at L*).
 - **L\* = 22** (P_last, window 9–31), frozen on extract_set before any eval activation was extracted. cos(f⊥c, b) = 0.385 (1/√d = 0.020).
 - **Parity:** vLLM vs HF top-1 agreement 40/40 (mean KL 0.004).
 
