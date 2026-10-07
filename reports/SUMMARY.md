@@ -37,7 +37,33 @@ MATH-500, n = 500, paired by uid. Label = math-verify, else the 8B thinking judg
 
 **Exploratory (not pre-registered; verdict unchanged):** the pre-registered sign-flip null is miscalibrated when f is strong (D9). Its draws correlate r ≈ 0.89 with the mean of the random signs, so its p99 tracks the observed value at every layer. Balanced or centred nulls give p99 ≈ 0.26 and **p = 0.001** at L*. So the format residual *does* share direction with brevity at the population level, but that shared component does not predict per-question behaviour. If criterion (i) is reused in E3, its null should be revised (needs your approval).
 
+## E3 — steering with the brevity direction (plan: `docs/E3_plan.md`; reports `e3_dev_*.md`, `e3_*.md`)
+
+The steering vector is added to the residual stream after block L* = 22 at every position. k = f·b̂ = 15.5 is the push the JSON prompt adds along b̂. The setup was verified before any eval run:
+- **Manipulation check:** −k·b̂ removes 97% of the JS–FF gap at L* and 63–89% downstream.
+- **Steered parity:** the vLLM and HF hooks agree on the top-1 next token for 40/40 prompts.
+- **Hook coverage:** the hook token counters cover every prompt and generated token.
+- **Prefix caching** is off for all steered runs.
+
+**Necessity arm (JS − k·b̂): blocked by the pre-specified dev safety rule.** On dev it lengthened JS reasoning (419 → 612 tokens at α = 0.5, 1,266 at α = 1), but lenient JSON validity fell 17 and 26 pp (limit 5). b̂ also carries "terse, unformatted" style: subtracting it brings FF's markdown back inside the JSON string. By user decision it was not run on MATH-500, so necessity is **untested**, not refuted.
+
+**Sufficiency arm (FF + k·b̂, α = 1), MATH-500, n = 500:**
+
+| cond | acc (final) | acc (mv) | median tok | right→wrong vs FF (mv) |
+|---|---|---|---|---|
+| FF | 81.4% | 79.4% | 558 | — |
+| JS | 76.6% | 72.2% | 380 | 67 |
+| **FF + k·b̂** | **75.6%** | 72.4% | **405** | 67 |
+| FF + k·r̂₀ (random, mv only) | — | 76.0% | 552 | 40 |
+
+- **S1 met.** FF + k·b̂ is shorter than FF (median −112 tokens, p = 1e-44) and shorter than the random push (p = 6e-45). It reproduces 82% of JSON's mean compression; the random push reproduces almost none (median −5).
+- **S2 met.** acc(FF) − acc(FF + k·b̂) = **+5.8 pp [+2.2, +9.4]**, McNemar p = 0.002, comparable to the JSON tax (+4.8 pp).
+- **Caveat — specificity of the accuracy loss.** Against the random control on math-verify labels the difference is −3.6 pp [−7.2, 0.0], p = 0.063. So the length effect is clearly specific to b̂, but that the *accuracy* loss exceeds generic perturbation damage is not established. Judge failures (32/138, all genuinely wrong on inspection) count as incorrect.
+- **Dev dose–response.** Tokens fall monotonically with α (614 → 332 at α = 2). Accuracy holds to α = 1 (78/80/77%), then collapses (60% at α = 1.5, 41% at α = 2).
+
+**Reading.** Adding only the format-induced brevity push to a plain prompt makes Qwen3-4B behave like it does under the JSON prompt: about as short, about as accurate, with the same number of flips. So brevity is *sufficient* to reproduce the format tax's behavioural signature. Combined with E1 (the push is nearly constant across questions, so it can't predict *which* items flip), the picture is a population-level brevity bias that costs accuracy mainly on hard items that needed the room. Whether it is *necessary* remains open: removing it from JS also removes format discipline, so a cleaner, style-matched brevity direction (e.g. JS+concise vs JS+detailed) would be needed to test that.
+
 ## Deviations (details in DEVIATIONS.md)
 D0 vLLM 0.31 bnb via the official `vllm-bnb-plugin` (NF4 + double quant verified); torch is a CUDA 13.2 build · D2 `gpu_memory_utilization` 0.80 (6.93 GiB free under WDDM) · D3 8B dropped as generator (user) · D4 judge in HF transformers, batch size 1 (user) · D5 FORMAT_BLOCK/REFORMAT_BLOCK revised by the user after schema echo; NEUTRAL_BLOCK then length-matched without padding · D6 2T at max_model_len 7168 (user) · D7 HF decoder layers return a tensor; hooks verified against hidden_states · D8 49/300 JS gen16 items excluded (no scaffold) · D9 null miscalibration (exploratory only) · D10 48/50 flip items available for audit · D1 LaTeX control-character repair in JSON candidates (5 items) · plus interpretations 1–10 (seeds, indexing, per-model self-consistency, figure names).
 
-Not done (out of scope after D3): any Qwen3-8B generator results, which means no 8B rows in E0/E1. The dev set (100 ids) is reserved for E3 and untouched.
+Not done (out of scope after D3): any Qwen3-8B generator results, which means no 8B rows in E0/E1. The dev set (100 ids) was used only for E3 calibration.

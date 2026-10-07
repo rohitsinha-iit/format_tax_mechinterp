@@ -1,6 +1,6 @@
 # E3 plan: causal steering with the brevity direction (Qwen3-4B, L* = 22)
 
-Status: **steps 1–3 done (2026-10-07); calibration waits on decisions D-E3-1…4 (see end).**
+Status: **complete (2026-10-07).** Sufficiency arm: S1 met, S2 met (+5.8 pp [+2.2, +9.4]). Necessity arm blocked by the dev safety rule. Results: `reports/e3_qwen3-4b-nf4.md`, `reports/e3_dev_qwen3-4b-nf4.md`, summary in `reports/SUMMARY.md`.
 
 ## Steps 1–3 results
 - **Vectors** (`results/qwen3-4b-nf4/e3_vectors.safetensors`): L* = 22, k = 15.53, ‖f‖ = 41.94, random r̂ seeds 100–104 (⊥ b̂, f̂).
