@@ -1,0 +1,19 @@
+{
+ "tag": "qwen3-4b-nf4",
+ "n": 50,
+ "median_tokens_C1": 224.5,
+ "median_tokens_D1": 525.5,
+ "ratio": 0.42721217887725976,
+ "max_ratio": 0.6,
+ "PASS": true,
+ "truncation_C1": 0.0,
+ "truncation_D1": 0.0,
+ "iqr_C1": [
+  144.0,
+  313.75
+ ],
+ "iqr_D1": [
+  409.0,
+  677.75
+ ]
+}

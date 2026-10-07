@@ -46,5 +46,21 @@
    "max_num_seqs": 8,
    "seed": 0
   }
+ },
+ "2T": {
+  "n": 500,
+  "out_tokens": 112555,
+  "wall_s": 1193.6858413219452,
+  "tok_per_s": 94.29197876331612,
+  "engine": {
+   "model": "Qwen/Qwen3-4B",
+   "quantization": "bitsandbytes",
+   "dtype": "bfloat16",
+   "max_model_len": 7168,
+   "gpu_memory_utilization": 0.8,
+   "enforce_eager": true,
+   "max_num_seqs": 8,
+   "seed": 0
+  }
  }
 }

@@ -1,7 +1,7 @@
 {
  "tag": "qwen3-4b-nf4",
- "time": "2026-10-07T03:18:38+00:00",
- "git": "9993bd94147da552a99c039fce891c794eacd121-dirty",
+ "time": "2026-10-07T06:14:43+00:00",
+ "git": "9bd74e3f8ea8ba5b3f3a4b981e088cff49b39235-dirty",
  "table": [
   {
    "condition": "FF",
@@ -62,6 +62,26 @@
    "judge_flipped_to_correct": 16,
    "extract_none": 83,
    "latex_escape_repaired": 3
+  },
+  {
+   "condition": "2T",
+   "n": 500,
+   "acc": 0.824,
+   "acc_mv": 0.802,
+   "strict_valid": 0.584,
+   "lenient_valid": 0.584,
+   "tok_median": 201.0,
+   "tok_q25": 159.75,
+   "tok_q75": 267.0,
+   "reasoning_tok_median": 161.5,
+   "reasoning_tok_q25": 130.0,
+   "reasoning_tok_q75": 208.25,
+   "truncation_rate": 0.0,
+   "judge_failed": 23,
+   "n_judged_mv_wrong": 99,
+   "judge_flipped_to_correct": 11,
+   "extract_none": 0,
+   "latex_escape_repaired": 2
   }
  ],
  "tax": {
@@ -78,6 +98,13 @@
     15.0,
     23.400000000000002
    ]
+  },
+  "2T": {
+   "tax_pp": -1.0,
+   "ci95": [
+    -2.1999999999999997,
+    0.0
+   ]
   }
  },
  "tax_mv_only": {
@@ -93,6 +120,13 @@
    "ci95": [
     16.0,
     24.8
+   ]
+  },
+  "2T": {
+   "tax_pp": -0.8,
+   "ci95": [
+    -2.6,
+    1.0
    ]
   }
  },
@@ -144,6 +178,22 @@
    "b_only": 16,
    "statistic": 16.0,
    "p": 3.1797513451124715e-13
+  },
+  "FF_vs_2T": {
+   "table": [
+    [
+     406,
+     1
+    ],
+    [
+     6,
+     87
+    ]
+   ],
+   "a_only": 1,
+   "b_only": 6,
+   "statistic": 1.0,
+   "p": 0.125
   }
  },
  "flip": {

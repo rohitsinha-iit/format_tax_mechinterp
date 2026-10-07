@@ -42,6 +42,8 @@ class ResidCapture:
         def fn(mod, inp, out):
             if idx > 0 and self.out_type is None:
                 self.out_type = type(out).__name__
+            if self.sel is None:  # hooks idle (e.g. the reference output_hidden_states pass)
+                return
             h = out[0] if isinstance(out, tuple) else out   # VERIFY: tuple (older) vs tensor (newer HF)
             assert h.dim() == 3 and h.shape[0] == 1, h.shape
             self.buf[idx] = self.sel(h[0]).detach().float().cpu()
@@ -52,6 +54,7 @@ class ResidCapture:
         self.sel = sel
         x = torch.tensor([ids], device=self.model.device)
         self.model.model(input_ids=x, use_cache=False)  # base model only: no lm_head needed
+        self.sel = None
         return torch.stack(self.buf, 0)  # [L+1, ...]
 
     def remove(self):

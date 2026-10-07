@@ -1,0 +1,31 @@
+{
+ "model": {
+  "num_hidden_layers": 36,
+  "hidden_size": 2560,
+  "tie_word_embeddings": true,
+  "quantization_config": {
+   "quant_method": "bitsandbytes",
+   "_load_in_8bit": false,
+   "_load_in_4bit": true,
+   "llm_int8_threshold": 6.0,
+   "llm_int8_skip_modules": null,
+   "llm_int8_enable_fp32_cpu_offload": false,
+   "llm_int8_has_fp16_weight": false,
+   "bnb_4bit_quant_type": "nf4",
+   "bnb_4bit_use_double_quant": true,
+   "bnb_4bit_compute_dtype": "bfloat16",
+   "bnb_4bit_quant_storage": "uint8",
+   "load_in_4bit": true,
+   "load_in_8bit": false
+  },
+  "attn_implementation": "sdpa",
+  "n_layers_module": 36
+ },
+ "hook_sanity": {
+  "decoder_layer_output_type": "Tensor",
+  "n_hidden_states": 37,
+  "L": 36,
+  "max_abs_diff_l_lt_L": 0.0,
+  "abs_diff_at_L_vs_hidden_states[-1]": 53.9482421875
+ }
+}

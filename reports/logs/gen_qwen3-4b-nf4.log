@@ -100,3 +100,72 @@
 [2026-10-06T13:46:45+00:00]   475 done, 375726 out tokens, 111.2 tok/s, 56.3 min
 [2026-10-06T13:53:11+00:00]   500 done, 416823 out tokens, 110.7 tok/s, 62.7 min
 [2026-10-06T13:53:11+00:00] finished qwen3-4b-nf4 e0 JC: {'n': 500, 'out_tokens': 416823, 'wall_s': 3763.8823845386505, 'tok_per_s': 110.74283344034173}
+[2026-10-07T03:21:54+00:00] qwen3-4b-nf4 e0 2T: 500 items, 0 done, 500 to run -> /mnt/d/NeuriAI/Assignment3/q2/format-tax-mi/outputs/qwen3-4b-nf4/e0_2T.jsonl
+[2026-10-07T03:21:59+00:00] vLLM engine kwargs: {'model': 'Qwen/Qwen3-4B', 'quantization': 'bitsandbytes', 'dtype': 'bfloat16', 'max_model_len': 7168, 'gpu_memory_utilization': 0.8, 'enforce_eager': True, 'max_num_seqs': 8, 'seed': 0}
+[2026-10-07T03:22:35+00:00] effective quant config: {"quantization": "bitsandbytes", "checkpoint_quant_config": null, "inflight": {"vllm_bnb_plugin": "0.0.3", "inflight_calls": ["quantize_4bit( weight_tensor, compress_statistics=True, quant_type=\"nf4\", )", "quantize_4bit( loaded_weight, compress_statistics=True, quant_type=\"nf4\", )"], "quant_type": ["nf4"], "compress_statistics(double_quant)": ["True"], "bitsandbytes": "0.50.2", "blocksize": "bitsandbytes default (64) \u2014 no blocksize argument passed"}}
+[2026-10-07T03:22:36+00:00] generating qwen3-4b-nf4 e0 2T: 500 items
+[2026-10-07T03:23:37+00:00]   25 done, 4918 out tokens, 80.3 tok/s, 1.0 min
+[2026-10-07T03:24:27+00:00]   50 done, 9589 out tokens, 86.0 tok/s, 1.9 min
+[2026-10-07T03:25:21+00:00]   75 done, 14993 out tokens, 90.9 tok/s, 2.8 min
+[2026-10-07T03:26:19+00:00]   100 done, 19946 out tokens, 89.3 tok/s, 3.7 min
+[2026-10-07T03:27:26+00:00]   125 done, 26403 out tokens, 91.1 tok/s, 4.8 min
+[2026-10-07T03:28:30+00:00]   150 done, 32352 out tokens, 91.4 tok/s, 5.9 min
+[2026-10-07T03:29:25+00:00]   175 done, 37602 out tokens, 91.8 tok/s, 6.8 min
+[2026-10-07T03:30:17+00:00]   200 done, 42410 out tokens, 91.9 tok/s, 7.7 min
+[2026-10-07T03:31:11+00:00]   225 done, 48266 out tokens, 93.7 tok/s, 8.6 min
+[2026-10-07T03:32:20+00:00]   250 done, 54509 out tokens, 93.3 tok/s, 9.7 min
+[2026-10-07T03:33:15+00:00]   275 done, 59216 out tokens, 92.7 tok/s, 10.7 min
+[2026-10-07T03:34:13+00:00]   300 done, 65363 out tokens, 93.8 tok/s, 11.6 min
+[2026-10-07T03:35:09+00:00]   325 done, 70932 out tokens, 94.1 tok/s, 12.6 min
+[2026-10-07T03:36:07+00:00]   350 done, 76193 out tokens, 93.9 tok/s, 13.5 min
+[2026-10-07T03:37:16+00:00]   375 done, 82366 out tokens, 93.6 tok/s, 14.7 min
+[2026-10-07T03:38:11+00:00]   400 done, 87565 out tokens, 93.7 tok/s, 15.6 min
+[2026-10-07T03:39:11+00:00]   425 done, 93253 out tokens, 93.7 tok/s, 16.6 min
+[2026-10-07T03:40:23+00:00]   450 done, 100167 out tokens, 93.9 tok/s, 17.8 min
+[2026-10-07T03:41:28+00:00]   475 done, 105433 out tokens, 93.1 tok/s, 18.9 min
+[2026-10-07T03:42:30+00:00]   500 done, 112555 out tokens, 94.3 tok/s, 19.9 min
+[2026-10-07T03:42:30+00:00] finished qwen3-4b-nf4 e0 2T: {'n': 500, 'out_tokens': 112555, 'wall_s': 1193.6858413219452, 'tok_per_s': 94.29197876331612}
+[2026-10-07T06:14:54+00:00] qwen3-4b-nf4 brevity C1: 50 items, 0 done, 50 to run -> /mnt/d/NeuriAI/Assignment3/q2/format-tax-mi/outputs/qwen3-4b-nf4/e1_brevity_C1.jsonl
+[2026-10-07T06:14:54+00:00] qwen3-4b-nf4 brevity D1: 50 items, 0 done, 50 to run -> /mnt/d/NeuriAI/Assignment3/q2/format-tax-mi/outputs/qwen3-4b-nf4/e1_brevity_D1.jsonl
+[2026-10-07T06:14:57+00:00] vLLM engine kwargs: {'model': 'Qwen/Qwen3-4B', 'quantization': 'bitsandbytes', 'dtype': 'bfloat16', 'max_model_len': 4096, 'gpu_memory_utilization': 0.8, 'enforce_eager': True, 'max_num_seqs': 8, 'seed': 0}
+[2026-10-07T06:15:41+00:00] effective quant config: {"quantization": "bitsandbytes", "checkpoint_quant_config": null, "inflight": {"vllm_bnb_plugin": "0.0.3", "inflight_calls": ["quantize_4bit( weight_tensor, compress_statistics=True, quant_type=\"nf4\", )", "quantize_4bit( loaded_weight, compress_statistics=True, quant_type=\"nf4\", )"], "quant_type": ["nf4"], "compress_statistics(double_quant)": ["True"], "bitsandbytes": "0.50.2", "blocksize": "bitsandbytes default (64) \u2014 no blocksize argument passed"}}
+[2026-10-07T06:15:41+00:00] generating qwen3-4b-nf4 brevity C1: 50 items
+[2026-10-07T06:16:35+00:00]   25 done, 4458 out tokens, 82.3 tok/s, 0.9 min
+[2026-10-07T06:17:51+00:00]   50 done, 12338 out tokens, 94.9 tok/s, 2.2 min
+[2026-10-07T06:17:51+00:00] finished qwen3-4b-nf4 brevity C1: {'n': 50, 'out_tokens': 12338, 'wall_s': 129.97478246688843, 'tok_per_s': 94.92610617096553}
+[2026-10-07T06:17:51+00:00] generating qwen3-4b-nf4 brevity D1: 50 items
+[2026-10-07T06:19:55+00:00]   25 done, 12067 out tokens, 97.8 tok/s, 2.1 min
+[2026-10-07T06:22:19+00:00]   50 done, 27251 out tokens, 102.0 tok/s, 4.5 min
+[2026-10-07T06:22:19+00:00] finished qwen3-4b-nf4 brevity D1: {'n': 50, 'out_tokens': 27251, 'wall_s': 267.19094038009644, 'tok_per_s': 101.99073352275225}
+[2026-10-07T06:22:34+00:00] qwen3-4b-nf4 ext80 FF: 300 items, 0 done, 300 to run -> /mnt/d/NeuriAI/Assignment3/q2/format-tax-mi/outputs/qwen3-4b-nf4/e1_ext80_FF.jsonl
+[2026-10-07T06:22:34+00:00] qwen3-4b-nf4 ext80 JS: 300 items, 0 done, 300 to run -> /mnt/d/NeuriAI/Assignment3/q2/format-tax-mi/outputs/qwen3-4b-nf4/e1_ext80_JS.jsonl
+[2026-10-07T06:22:37+00:00] vLLM engine kwargs: {'model': 'Qwen/Qwen3-4B', 'quantization': 'bitsandbytes', 'dtype': 'bfloat16', 'max_model_len': 4096, 'gpu_memory_utilization': 0.8, 'enforce_eager': True, 'max_num_seqs': 8, 'seed': 0}
+[2026-10-07T06:23:15+00:00] effective quant config: {"quantization": "bitsandbytes", "checkpoint_quant_config": null, "inflight": {"vllm_bnb_plugin": "0.0.3", "inflight_calls": ["quantize_4bit( weight_tensor, compress_statistics=True, quant_type=\"nf4\", )", "quantize_4bit( loaded_weight, compress_statistics=True, quant_type=\"nf4\", )"], "quant_type": ["nf4"], "compress_statistics(double_quant)": ["True"], "bitsandbytes": "0.50.2", "blocksize": "bitsandbytes default (64) \u2014 no blocksize argument passed"}}
+[2026-10-07T06:23:15+00:00] generating qwen3-4b-nf4 ext80 FF: 300 items
+[2026-10-07T06:23:43+00:00]   25 done, 2000 out tokens, 72.3 tok/s, 0.5 min
+[2026-10-07T06:24:01+00:00]   50 done, 4000 out tokens, 87.1 tok/s, 0.8 min
+[2026-10-07T06:24:21+00:00]   75 done, 6000 out tokens, 91.1 tok/s, 1.1 min
+[2026-10-07T06:24:41+00:00]   100 done, 8000 out tokens, 92.8 tok/s, 1.4 min
+[2026-10-07T06:25:01+00:00]   125 done, 10000 out tokens, 93.9 tok/s, 1.8 min
+[2026-10-07T06:25:20+00:00]   150 done, 12000 out tokens, 95.6 tok/s, 2.1 min
+[2026-10-07T06:25:38+00:00]   175 done, 14000 out tokens, 98.0 tok/s, 2.4 min
+[2026-10-07T06:25:54+00:00]   200 done, 16000 out tokens, 100.3 tok/s, 2.7 min
+[2026-10-07T06:26:16+00:00]   225 done, 18000 out tokens, 99.2 tok/s, 3.0 min
+[2026-10-07T06:26:33+00:00]   250 done, 20000 out tokens, 101.2 tok/s, 3.3 min
+[2026-10-07T06:26:49+00:00]   275 done, 22000 out tokens, 102.6 tok/s, 3.6 min
+[2026-10-07T06:27:05+00:00]   300 done, 24000 out tokens, 104.3 tok/s, 3.8 min
+[2026-10-07T06:27:05+00:00] finished qwen3-4b-nf4 ext80 FF: {'n': 300, 'out_tokens': 24000, 'wall_s': 230.14094710350037, 'tok_per_s': 104.28391949393767}
+[2026-10-07T06:27:05+00:00] generating qwen3-4b-nf4 ext80 JS: 300 items
+[2026-10-07T06:27:30+00:00]   25 done, 2000 out tokens, 81.7 tok/s, 0.4 min
+[2026-10-07T06:27:50+00:00]   50 done, 4000 out tokens, 89.8 tok/s, 0.7 min
+[2026-10-07T06:28:10+00:00]   75 done, 6000 out tokens, 92.7 tok/s, 1.1 min
+[2026-10-07T06:28:31+00:00]   100 done, 8000 out tokens, 93.8 tok/s, 1.4 min
+[2026-10-07T06:28:52+00:00]   125 done, 10000 out tokens, 93.5 tok/s, 1.8 min
+[2026-10-07T06:29:13+00:00]   150 done, 12000 out tokens, 94.0 tok/s, 2.1 min
+[2026-10-07T06:29:29+00:00]   175 done, 14000 out tokens, 97.2 tok/s, 2.4 min
+[2026-10-07T06:29:46+00:00]   200 done, 16000 out tokens, 99.4 tok/s, 2.7 min
+[2026-10-07T06:30:09+00:00]   225 done, 18000 out tokens, 98.0 tok/s, 3.1 min
+[2026-10-07T06:30:26+00:00]   250 done, 20000 out tokens, 99.9 tok/s, 3.3 min
+[2026-10-07T06:30:42+00:00]   275 done, 22000 out tokens, 101.5 tok/s, 3.6 min
+[2026-10-07T06:30:58+00:00]   300 done, 24000 out tokens, 103.0 tok/s, 3.9 min
+[2026-10-07T06:30:58+00:00] finished qwen3-4b-nf4 ext80 JS: {'n': 300, 'out_tokens': 24000, 'wall_s': 232.9778151512146, 'tok_per_s': 103.01410022418986}

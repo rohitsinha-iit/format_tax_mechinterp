@@ -89,3 +89,20 @@
 [2026-10-06T23:21:13+00:00]   90/100 judged, 12.9 tok/s, 94.7 min
 [2026-10-06T23:34:26+00:00]   100/100 judged, 12.9 tok/s, 107.9 min
 [2026-10-06T23:34:26+00:00] done seed=2: {'n': 100, 'out_tokens': 83405, 'wall_s': 6474.250593423843, 'tok_per_s': 12.882572090230461}
+[2026-10-07T03:42:58+00:00] judge qwen3-4b-nf4 2T: 139 items (99 mv_wrong, 40 calib); 0 done
+[2026-10-07T03:43:25+00:00] HF judge loaded: {'backend': 'hf-transformers', 'max_model_len': 4096, 'batch_size': 1, 'hf_model': {'num_hidden_layers': 36, 'hidden_size': 4096, 'tie_word_embeddings': False, 'quantization_config': {'quant_method': <QuantizationMethod.BITS_AND_BYTES: 'bitsandbytes'>, '_load_in_8bit': False, '_load_in_4bit': True, 'llm_int8_threshold': 6.0, 'llm_int8_skip_modules': None, 'llm_int8_enable_fp32_cpu_offload': False, 'llm_int8_has_fp16_weight': False, 'bnb_4bit_quant_type': 'nf4', 'bnb_4bit_use_double_quant': True, 'bnb_4bit_compute_dtype': 'bfloat16', 'bnb_4bit_quant_storage': 'uint8', 'load_in_4bit': True, 'load_in_8bit': False}, 'attn_implementation': 'sdpa', 'n_layers_module': 36}}
+[2026-10-07T03:43:26+00:00] judging 139 items seed=0 backend=hf -> /mnt/d/NeuriAI/Assignment3/q2/format-tax-mi/outputs/qwen3-4b-nf4/judge/e0_2T_judge_seed0.jsonl
+[2026-10-07T03:55:05+00:00]   10/139 judged, 12.5 tok/s, 11.7 min
+[2026-10-07T04:06:42+00:00]   20/139 judged, 12.5 tok/s, 23.3 min
+[2026-10-07T04:24:10+00:00]   30/139 judged, 12.6 tok/s, 40.7 min
+[2026-10-07T04:38:53+00:00]   40/139 judged, 12.6 tok/s, 55.5 min
+[2026-10-07T04:49:18+00:00]   50/139 judged, 12.6 tok/s, 65.9 min
+[2026-10-07T04:59:09+00:00]   60/139 judged, 12.6 tok/s, 75.7 min
+[2026-10-07T05:13:55+00:00]   70/139 judged, 12.6 tok/s, 90.5 min
+[2026-10-07T05:31:04+00:00]   80/139 judged, 12.7 tok/s, 107.6 min
+[2026-10-07T05:43:43+00:00]   90/139 judged, 12.7 tok/s, 120.3 min
+[2026-10-07T05:58:07+00:00]   100/139 judged, 12.7 tok/s, 134.7 min
+[2026-10-07T06:02:28+00:00]   110/139 judged, 12.7 tok/s, 139.0 min
+[2026-10-07T06:06:34+00:00]   120/139 judged, 12.7 tok/s, 143.1 min
+[2026-10-07T06:10:39+00:00]   130/139 judged, 12.7 tok/s, 147.2 min
+[2026-10-07T06:14:38+00:00] done seed=0: {'n': 139, 'out_tokens': 114685, 'wall_s': 9071.936715602875, 'tok_per_s': 12.641732806926731}

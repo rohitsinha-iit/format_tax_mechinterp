@@ -1,0 +1,34 @@
+{
+ "C1": {
+  "n": 50,
+  "out_tokens": 12338,
+  "wall_s": 129.97478246688843,
+  "tok_per_s": 94.92610617096553,
+  "engine": {
+   "model": "Qwen/Qwen3-4B",
+   "quantization": "bitsandbytes",
+   "dtype": "bfloat16",
+   "max_model_len": 4096,
+   "gpu_memory_utilization": 0.8,
+   "enforce_eager": true,
+   "max_num_seqs": 8,
+   "seed": 0
+  }
+ },
+ "D1": {
+  "n": 50,
+  "out_tokens": 27251,
+  "wall_s": 267.19094038009644,
+  "tok_per_s": 101.99073352275225,
+  "engine": {
+   "model": "Qwen/Qwen3-4B",
+   "quantization": "bitsandbytes",
+   "dtype": "bfloat16",
+   "max_model_len": 4096,
+   "gpu_memory_utilization": 0.8,
+   "enforce_eager": true,
+   "max_num_seqs": 8,
+   "seed": 0
+  }
+ }
+}
