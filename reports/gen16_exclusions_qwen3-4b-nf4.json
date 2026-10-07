@@ -1,0 +1,18 @@
+{
+ "FF": {
+  "no_scaffold": 0,
+  "too_few_content_tokens": 0,
+  "missing": 0,
+  "kept": 300,
+  "offsets": {}
+ },
+ "JS": {
+  "no_scaffold": 49,
+  "too_few_content_tokens": 0,
+  "missing": 0,
+  "kept": 251,
+  "offsets": {
+   "offsets_mapping": 251
+  }
+ }
+}

@@ -1,0 +1,21 @@
+{
+ "tag": "qwen3-4b-nf4",
+ "L_star": 22,
+ "layer_window": [
+  9,
+  31
+ ],
+ "position": "P_last",
+ "L": 36,
+ "d": 2560,
+ "cos_fperpc_b_at_Lstar": 0.3846665918827057,
+ "null_p95": 0.3866669535636902,
+ "null_p99": 0.39917901158332825,
+ "null_p_value": 0.06493506580591202,
+ "b_hat_file": "e1_b_hat.safetensors",
+ "b_hat_sha256": "5fadfa4160a47bb99659fdad02b3d8d843e98e4e695e1b3a2ac8581b0273874b",
+ "n_extract": 300,
+ "frozen_at": "2026-10-07T06:52:52+00:00",
+ "git": "d540efafd4b5df665d31ad818a74855624c9b482-dirty",
+ "note": "computed on extract_set only, before any MATH-500 activation was extracted"
+}

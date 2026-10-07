@@ -169,3 +169,7 @@
 [2026-10-07T06:30:42+00:00]   275 done, 22000 out tokens, 101.5 tok/s, 3.6 min
 [2026-10-07T06:30:58+00:00]   300 done, 24000 out tokens, 103.0 tok/s, 3.9 min
 [2026-10-07T06:30:58+00:00] finished qwen3-4b-nf4 ext80 JS: {'n': 300, 'out_tokens': 24000, 'wall_s': 232.9778151512146, 'tok_per_s': 103.01410022418986}
+[2026-10-07T06:41:24+00:00] qwen3-4b-nf4 brevity C1: 50 items, 50 done, 0 to run -> /mnt/d/NeuriAI/Assignment3/q2/format-tax-mi/outputs/qwen3-4b-nf4/e1_brevity_C1.jsonl
+[2026-10-07T06:41:24+00:00] qwen3-4b-nf4 brevity D1: 50 items, 50 done, 0 to run -> /mnt/d/NeuriAI/Assignment3/q2/format-tax-mi/outputs/qwen3-4b-nf4/e1_brevity_D1.jsonl
+[2026-10-07T06:41:38+00:00] qwen3-4b-nf4 ext80 FF: 300 items, 300 done, 0 to run -> /mnt/d/NeuriAI/Assignment3/q2/format-tax-mi/outputs/qwen3-4b-nf4/e1_ext80_FF.jsonl
+[2026-10-07T06:41:38+00:00] qwen3-4b-nf4 ext80 JS: 300 items, 300 done, 0 to run -> /mnt/d/NeuriAI/Assignment3/q2/format-tax-mi/outputs/qwen3-4b-nf4/e1_ext80_JS.jsonl

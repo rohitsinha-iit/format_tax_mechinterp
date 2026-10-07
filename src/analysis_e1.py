@@ -252,6 +252,27 @@ def report(tag: str):
               f"![s vs dtok](../figs/e1_s_vs_dtok_{tag}.png) ![flip by s](../figs/e1_flip_by_s_quintile_{tag}.png)", ""]
     else:
         L += ["## Per-question test (§8.5)", "", "Not run (model did not pass the E0 gate, or eval activations not extracted yet).", ""]
+    dg = R / "e1_null_diagnostic.json"
+    if dg.exists():
+        g = json.loads(dg.read_text())
+        r = g["Lstar_row"]
+        sp_rows = [x for x in g["layers"] if x["layer"] > 0]
+        L += ["## EXPLORATORY (not pre-registered): calibration of the §8.4.3 sign-flip null", "",
+              "The pre-registered null flips the sign of each JS−FF paired difference d_i. Because f is estimated very "
+              "reliably (split-half cos ≈ 0.999), f_null = s̄·f + mean_i s_i(d_i − f), and the small leftover term s̄·f "
+              "(|s̄| ≈ 1/√n) still dominates f_null's *direction*. A cosine is scale-invariant, so the null largely "
+              "reproduces ±cos(f⊥c, b) and its p99 tracks the observed value at every layer. "
+              f"Evidence: across draws, the null cosine correlates with s̄ at r = {r['corr_spec_null_with_sbar']:.2f} at L* "
+              f"(median over layers {np.median([x['corr_spec_null_with_sbar'] for x in sp_rows]):.2f}).", "",
+              "Two nulls that remove the s̄·f term (`scripts/diag_null.py`, same 1,000 draws):", "",
+              "| null | p99 at L* | p-value of observed cos(f⊥c, b) = "
+              f"{r['obs_cos_fperpc_b']:.3f} |", "|---|---|---|",
+              f"| pre-registered sign flip | {r['spec_null_p99']:.3f} | — (criterion (i) not met) |",
+              f"| balanced flips (exactly n/2 of each sign) | {r['balanced_null_p99']:.3f} | {r['balanced_p_value']:.3f} |",
+              f"| centred flips (flip d_i − f) | {r['centred_null_p99']:.3f} | {r['centred_p_value']:.3f} |", "",
+              "Under these calibrated nulls the format residual f⊥c is aligned with the brevity direction b beyond chance "
+              "at L* (and in most layers ≥ 15). This does **not** change the pre-registered verdict for criterion (i), and "
+              "it does not rescue H1: the per-question predictive criteria (ii) and (iii) fail regardless.", ""]
     (REPORTS / f"e1_{tag}.md").write_text("\n".join(L) + "\n", encoding="utf-8")
     print("\n".join(L))
 
