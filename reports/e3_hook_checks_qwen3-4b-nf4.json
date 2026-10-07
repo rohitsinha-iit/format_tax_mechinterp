@@ -1,0 +1,13 @@
+{
+ "dev_JS_none_a0": {
+  "hook_tokens": 0,
+  "expected_min": 91009,
+  "prompt_tokens": 21569,
+  "decode_tokens": 69440,
+  "OK": true,
+  "n": 100,
+  "out_tokens": 69540,
+  "wall_s": 894.1339285373688,
+  "tok_per_s": 77.77358377816405
+ }
+}

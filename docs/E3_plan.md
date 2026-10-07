@@ -92,7 +92,16 @@ paired items, a half recovery likely is not (power ~30–40%).
 - Generation: ~3 h with vLLM + hook (~10 h HF-only) for the 4 eval conditions; dev calibration ~1.5 h (vLLM).
 - Judge (HF 8B, ~1.1 min/item): ~3–4 h per fully judged condition. This dominates.
 
-## Decisions pending (user)
+## Decisions (user, 2026-10-07)
+- **D-E3-1:** vLLM + hook.
+- **D-E3-2:** judge only E3-N and E3-S; the random controls E3-Nr/E3-Sr get math-verify labels only (accuracy comparisons that involve the controls use math-verify on both sides).
+- **D-E3-3:** criteria N1–N3, S1–S2 approved; α = 1 primary.
+  - **N1 measurement:** only ~29% of JS outputs are strictly valid JSON (LaTeX escapes), so the reasoning field is measured with tolerant span extraction: JSON parse if possible, else the raw `"reasoning": "…"` span up to `", "answer":`, or to the end. The strictly-valid subset is reported alongside.
+- **D-E3-4:** not answered. Criterion (i) is not part of E3 and is not reported there.
+- **Random control on eval:** r̂₀ (seed 100). r̂₁ and r̂₂ are used on dev only.
+- **Safety rule for α = 1** (fixed before any steered output was inspected): on dev, for JS−b and FF+b, the degenerate rate (truncated with a repetitive or blank tail) rises by ≤ 5 pp over unsteered, and JS−b lenient validity drops by ≤ 5 pp. Otherwise STOP and report.
+
+## Decisions as originally posed
 - **D-E3-1 backend:** vLLM + hook (requires step 3 to pass) vs HF-only.
 - **D-E3-2 eval scope:** judge all four conditions, or judge E3-N/E3-S only and score the random controls with math-verify only.
 - **D-E3-3:** approve criteria N1–N3, S1–S2 and α = 1 as primary.

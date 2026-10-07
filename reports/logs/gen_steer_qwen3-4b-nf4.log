@@ -1,0 +1,27 @@
+[2026-10-07T07:28:01+00:00] dev_JS_none_a0: 100 items, 0 done, 100 to run
+[2026-10-07T07:28:14+00:00] dev_FF_none_a0: 100 items, 0 done, 100 to run
+[2026-10-07T07:28:27+00:00] dev_JS_minus_b_a1: 100 items, 0 done, 100 to run
+[2026-10-07T07:28:39+00:00] dev_FF_plus_b_a1: 100 items, 0 done, 100 to run
+[2026-10-07T07:28:52+00:00] dev_JS_minus_r0_a1: 100 items, 0 done, 100 to run
+[2026-10-07T07:29:05+00:00] dev_FF_plus_r0_a1: 100 items, 0 done, 100 to run
+[2026-10-07T07:29:17+00:00] dev_JS_minus_f_a1: 100 items, 0 done, 100 to run
+[2026-10-07T07:29:30+00:00] dev_JS_minus_b_a0.5: 100 items, 0 done, 100 to run
+[2026-10-07T07:29:42+00:00] dev_JS_minus_b_a1.5: 100 items, 0 done, 100 to run
+[2026-10-07T07:29:55+00:00] dev_JS_minus_b_a2: 100 items, 0 done, 100 to run
+[2026-10-07T07:30:07+00:00] dev_FF_plus_b_a0.5: 100 items, 0 done, 100 to run
+[2026-10-07T07:30:20+00:00] dev_FF_plus_b_a1.5: 100 items, 0 done, 100 to run
+[2026-10-07T07:30:32+00:00] dev_FF_plus_b_a2: 100 items, 0 done, 100 to run
+[2026-10-07T07:30:45+00:00] dev_JS_minus_r1_a1: 100 items, 0 done, 100 to run
+[2026-10-07T07:30:58+00:00] dev_JS_minus_r2_a1: 100 items, 0 done, 100 to run
+[2026-10-07T07:31:11+00:00] dev_FF_plus_r1_a1: 100 items, 0 done, 100 to run
+[2026-10-07T07:31:24+00:00] dev_FF_plus_r2_a1: 100 items, 0 done, 100 to run
+[2026-10-07T07:31:31+00:00] vLLM engine kwargs: {'model': 'Qwen/Qwen3-4B', 'quantization': 'bitsandbytes', 'dtype': 'bfloat16', 'max_model_len': 4096, 'gpu_memory_utilization': 0.8, 'enforce_eager': True, 'max_num_seqs': 8, 'seed': 0, 'enable_prefix_caching': False}
+[2026-10-07T07:32:19+00:00] generating dev_JS_none_a0 (100 items)
+[2026-10-07T07:34:42+00:00]   25 done, 7660 out tokens, 53.4 tok/s, 2.4 min
+[2026-10-07T07:40:01+00:00]   50 done, 25553 out tokens, 55.2 tok/s, 7.7 min
+[2026-10-07T07:43:07+00:00]   75 done, 45865 out tokens, 70.8 tok/s, 10.8 min
+[2026-10-07T07:47:13+00:00]   100 done, 69540 out tokens, 77.8 tok/s, 14.9 min
+[2026-10-07T07:47:13+00:00] finished dev_JS_none_a0: {'n': 100, 'out_tokens': 69540, 'wall_s': 894.1339285373688, 'tok_per_s': 77.77358377816405}; hook tokens 0 vs expected ≥91009 -> OK
+[2026-10-07T07:47:14+00:00] generating dev_FF_none_a0 (100 items)
+[2026-10-07T07:49:16+00:00]   25 done, 11071 out tokens, 90.5 tok/s, 2.0 min
+[2026-10-07T07:53:36+00:00]   50 done, 39960 out tokens, 104.6 tok/s, 6.4 min
