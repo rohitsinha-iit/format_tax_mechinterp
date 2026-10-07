@@ -112,3 +112,48 @@
 [2026-10-07T16:01:51+00:00] finished dev_FF_plus_r2_a1: {'n': 100, 'out_tokens': 98131, 'wall_s': 1436.7547047138214, 'tok_per_s': 68.3004549614794}; hook tokens 111178 vs expected ≥111088 -> OK
 [2026-10-07T16:03:26+00:00] eval_FF_plus_b_a1: 500 items, 0 done, 500 to run
 [2026-10-07T16:03:28+00:00] eval_FF_plus_r0_a1: 500 items, 0 done, 500 to run
+[2026-10-07T16:03:34+00:00] vLLM engine kwargs: {'model': 'Qwen/Qwen3-4B', 'quantization': 'bitsandbytes', 'dtype': 'bfloat16', 'max_model_len': 4096, 'gpu_memory_utilization': 0.8, 'enforce_eager': True, 'max_num_seqs': 8, 'seed': 0, 'enable_prefix_caching': False}
+[2026-10-07T16:04:26+00:00] generating eval_FF_plus_b_a1 (500 items)
+[2026-10-07T16:06:27+00:00]   25 done, 11037 out tokens, 91.4 tok/s, 2.0 min
+[2026-10-07T16:08:34+00:00]   50 done, 24804 out tokens, 100.1 tok/s, 4.1 min
+[2026-10-07T16:10:27+00:00]   75 done, 40662 out tokens, 112.7 tok/s, 6.0 min
+[2026-10-07T16:13:17+00:00]   100 done, 59603 out tokens, 112.2 tok/s, 8.9 min
+[2026-10-07T16:16:57+00:00]   125 done, 85633 out tokens, 114.0 tok/s, 12.5 min
+[2026-10-07T16:18:53+00:00]   150 done, 103673 out tokens, 119.5 tok/s, 14.5 min
+[2026-10-07T16:20:56+00:00]   175 done, 119218 out tokens, 120.4 tok/s, 16.5 min
+[2026-10-07T16:23:04+00:00]   200 done, 132867 out tokens, 118.8 tok/s, 18.6 min
+[2026-10-07T16:24:50+00:00]   225 done, 145920 out tokens, 119.3 tok/s, 20.4 min
+[2026-10-07T16:27:28+00:00]   250 done, 167047 out tokens, 120.8 tok/s, 23.0 min
+[2026-10-07T16:28:55+00:00]   275 done, 176731 out tokens, 120.3 tok/s, 24.5 min
+[2026-10-07T16:32:04+00:00]   300 done, 192412 out tokens, 116.0 tok/s, 27.6 min
+[2026-10-07T16:33:53+00:00]   325 done, 213762 out tokens, 121.0 tok/s, 29.4 min
+[2026-10-07T16:36:37+00:00]   350 done, 231911 out tokens, 120.1 tok/s, 32.2 min
+[2026-10-07T16:38:26+00:00]   375 done, 247499 out tokens, 121.3 tok/s, 34.0 min
+[2026-10-07T16:40:15+00:00]   400 done, 260861 out tokens, 121.4 tok/s, 35.8 min
+[2026-10-07T16:43:54+00:00]   425 done, 284519 out tokens, 120.1 tok/s, 39.5 min
+[2026-10-07T16:46:23+00:00]   450 done, 307157 out tokens, 122.0 tok/s, 41.9 min
+[2026-10-07T16:48:26+00:00]   475 done, 320486 out tokens, 121.4 tok/s, 44.0 min
+[2026-10-07T16:53:10+00:00]   500 done, 350459 out tokens, 119.9 tok/s, 48.7 min
+[2026-10-07T16:53:10+00:00] finished eval_FF_plus_b_a1: {'n': 500, 'out_tokens': 350459, 'wall_s': 2924.0810108184814, 'tok_per_s': 119.85269857550998}; hook tokens 403892 vs expected ≥403429 -> OK
+[2026-10-07T16:53:13+00:00] generating eval_FF_plus_r0_a1 (500 items)
+[2026-10-07T16:56:53+00:00]   25 done, 16143 out tokens, 73.4 tok/s, 3.7 min
+[2026-10-07T16:58:54+00:00]   50 done, 40116 out tokens, 117.4 tok/s, 5.7 min
+[2026-10-07T17:01:17+00:00]   75 done, 56141 out tokens, 116.0 tok/s, 8.1 min
+[2026-10-07T17:04:27+00:00]   100 done, 74347 out tokens, 110.3 tok/s, 11.2 min
+[2026-10-07T17:07:26+00:00]   125 done, 100698 out tokens, 118.0 tok/s, 14.2 min
+[2026-10-07T17:10:24+00:00]   150 done, 123586 out tokens, 119.8 tok/s, 17.2 min
+[2026-10-07T17:14:04+00:00]   175 done, 148304 out tokens, 118.5 tok/s, 20.9 min
+[2026-10-07T17:16:37+00:00]   200 done, 166611 out tokens, 118.7 tok/s, 23.4 min
+[2026-10-07T17:18:56+00:00]   225 done, 185128 out tokens, 120.0 tok/s, 25.7 min
+[2026-10-07T17:22:06+00:00]   250 done, 205744 out tokens, 118.7 tok/s, 28.9 min
+[2026-10-07T17:24:23+00:00]   275 done, 225816 out tokens, 120.7 tok/s, 31.2 min
+[2026-10-07T17:27:51+00:00]   300 done, 245452 out tokens, 118.1 tok/s, 34.6 min
+[2026-10-07T17:30:27+00:00]   325 done, 271220 out tokens, 121.4 tok/s, 37.2 min
+[2026-10-07T17:33:45+00:00]   350 done, 298389 out tokens, 122.7 tok/s, 40.5 min
+[2026-10-07T17:36:43+00:00]   375 done, 314017 out tokens, 120.3 tok/s, 43.5 min
+[2026-10-07T17:38:58+00:00]   400 done, 334702 out tokens, 121.9 tok/s, 45.8 min
+[2026-10-07T17:42:33+00:00]   425 done, 358071 out tokens, 120.9 tok/s, 49.3 min
+[2026-10-07T17:45:21+00:00]   450 done, 382820 out tokens, 122.4 tok/s, 52.1 min
+[2026-10-07T17:47:31+00:00]   475 done, 399469 out tokens, 122.6 tok/s, 54.3 min
+[2026-10-07T17:53:38+00:00]   500 done, 437412 out tokens, 120.7 tok/s, 60.4 min
+[2026-10-07T17:53:38+00:00] finished eval_FF_plus_r0_a1: {'n': 500, 'out_tokens': 437412, 'wall_s': 3625.446341753006, 'tok_per_s': 120.65052376102715}; hook tokens 490838 vs expected ≥490382 -> OK

@@ -141,5 +141,27 @@
   "out_tokens": 98131,
   "wall_s": 1436.7547047138214,
   "tok_per_s": 68.3004549614794
+ },
+ "eval_FF_plus_b_a1": {
+  "hook_tokens": 403892,
+  "expected_min": 403429,
+  "prompt_tokens": 53470,
+  "decode_tokens": 349959,
+  "OK": true,
+  "n": 500,
+  "out_tokens": 350459,
+  "wall_s": 2924.0810108184814,
+  "tok_per_s": 119.85269857550998
+ },
+ "eval_FF_plus_r0_a1": {
+  "hook_tokens": 490838,
+  "expected_min": 490382,
+  "prompt_tokens": 53470,
+  "decode_tokens": 436912,
+  "OK": true,
+  "n": 500,
+  "out_tokens": 437412,
+  "wall_s": 3625.446341753006,
+  "tok_per_s": 120.65052376102715
  }
 }
