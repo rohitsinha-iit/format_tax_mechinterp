@@ -36,3 +36,35 @@
 [2026-10-07T08:21:40+00:00] finished dev_JS_minus_b_a1: {'n': 100, 'out_tokens': 146182, 'wall_s': 1231.7168321609497, 'tok_per_s': 118.681499012671}; hook tokens 167732 vs expected ≥167651 -> OK
 [2026-10-07T08:21:41+00:00] generating dev_FF_plus_b_a1 (100 items)
 [2026-10-07T08:23:04+00:00]   25 done, 8485 out tokens, 102.4 tok/s, 1.4 min
+[2026-10-07T08:25:23+00:00]   50 done, 24087 out tokens, 108.8 tok/s, 3.7 min
+[2026-10-07T08:28:28+00:00]   75 done, 42416 out tokens, 104.4 tok/s, 6.8 min
+[2026-10-07T08:32:23+00:00]   100 done, 66856 out tokens, 104.2 tok/s, 10.7 min
+[2026-10-07T08:32:23+00:00] finished dev_FF_plus_b_a1: {'n': 100, 'out_tokens': 66856, 'wall_s': 641.4958093166351, 'tok_per_s': 104.21891932734455}; hook tokens 79909 vs expected ≥79813 -> OK
+[2026-10-07T08:32:30+00:00] generating dev_JS_minus_r0_a1 (100 items)
+[2026-10-07T08:33:55+00:00]   25 done, 8038 out tokens, 95.0 tok/s, 1.4 min
+[2026-10-07T08:36:57+00:00]   50 done, 27320 out tokens, 102.6 tok/s, 4.4 min
+[2026-10-07T08:39:54+00:00]   75 done, 48473 out tokens, 109.3 tok/s, 7.4 min
+[2026-10-07T08:44:07+00:00]   100 done, 72850 out tokens, 104.5 tok/s, 11.6 min
+[2026-10-07T08:44:08+00:00] finished dev_JS_minus_r0_a1: {'n': 100, 'out_tokens': 72850, 'wall_s': 697.1650240421295, 'tok_per_s': 104.49462822678507}; hook tokens 94417 vs expected ≥94319 -> OK
+[2026-10-07T08:44:10+00:00] generating dev_FF_plus_r0_a1 (100 items)
+[2026-10-07T08:45:50+00:00]   25 done, 11115 out tokens, 111.6 tok/s, 1.7 min
+[2026-10-07T08:49:53+00:00]   50 done, 37209 out tokens, 108.6 tok/s, 5.7 min
+[2026-10-07T08:53:56+00:00]   75 done, 65398 out tokens, 111.7 tok/s, 9.8 min
+[2026-10-07T08:57:29+00:00]   100 done, 91322 out tokens, 114.3 tok/s, 13.3 min
+[2026-10-07T08:57:29+00:00] finished dev_FF_plus_r0_a1: {'n': 100, 'out_tokens': 91322, 'wall_s': 798.9329681396484, 'tok_per_s': 114.30495879103276}; hook tokens 104372 vs expected ≥104279 -> OK
+[2026-10-07T08:57:33+00:00] generating dev_JS_minus_f_a1 (100 items)
+[2026-10-07T09:10:49+00:00]   25 done, 76800 out tokens, 96.5 tok/s, 13.3 min
+[2026-10-07T09:20:57+00:00]   50 done, 153600 out tokens, 109.4 tok/s, 23.4 min
+[2026-10-07T09:30:52+00:00]   75 done, 230400 out tokens, 115.2 tok/s, 33.3 min
+[2026-10-07T09:40:55+00:00]   100 done, 307200 out tokens, 118.0 tok/s, 43.4 min
+[2026-10-07T09:40:55+00:00] finished dev_JS_minus_f_a1: {'n': 100, 'out_tokens': 307200, 'wall_s': 2602.621829509735, 'tok_per_s': 118.03482031727535}; hook tokens 381668 vs expected ≥328669 -> OK
+[2026-10-07T09:40:58+00:00] generating dev_JS_minus_b_a0.5 (100 items)
+[2026-10-07T09:42:35+00:00]   25 done, 10049 out tokens, 104.0 tok/s, 1.6 min
+[2026-10-07T09:47:03+00:00]   50 done, 38986 out tokens, 107.0 tok/s, 6.1 min
+[2026-10-07T09:50:28+00:00]   75 done, 62893 out tokens, 110.5 tok/s, 9.5 min
+[2026-10-07T09:55:07+00:00]   100 done, 94839 out tokens, 111.7 tok/s, 14.2 min
+[2026-10-07T09:55:07+00:00] finished dev_JS_minus_b_a0.5: {'n': 100, 'out_tokens': 94839, 'wall_s': 849.0712654590607, 'tok_per_s': 111.69733785387749}; hook tokens 116399 vs expected ≥116308 -> OK
+[2026-10-07T09:55:10+00:00] generating dev_JS_minus_b_a1.5 (100 items)
+[2026-10-07T10:03:57+00:00]   25 done, 53366 out tokens, 101.3 tok/s, 8.8 min
+[2026-10-07T10:13:35+00:00]   50 done, 119837 out tokens, 108.5 tok/s, 18.4 min
+[2026-10-07T10:22:33+00:00]   75 done, 182929 out tokens, 111.4 tok/s, 27.4 min

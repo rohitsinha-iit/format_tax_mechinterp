@@ -31,5 +31,60 @@
   "out_tokens": 146182,
   "wall_s": 1231.7168321609497,
   "tok_per_s": 118.681499012671
+ },
+ "dev_FF_plus_b_a1": {
+  "hook_tokens": 79909,
+  "expected_min": 79813,
+  "prompt_tokens": 13057,
+  "decode_tokens": 66756,
+  "OK": true,
+  "n": 100,
+  "out_tokens": 66856,
+  "wall_s": 641.4958093166351,
+  "tok_per_s": 104.21891932734455
+ },
+ "dev_JS_minus_r0_a1": {
+  "hook_tokens": 94417,
+  "expected_min": 94319,
+  "prompt_tokens": 21569,
+  "decode_tokens": 72750,
+  "OK": true,
+  "n": 100,
+  "out_tokens": 72850,
+  "wall_s": 697.1650240421295,
+  "tok_per_s": 104.49462822678507
+ },
+ "dev_FF_plus_r0_a1": {
+  "hook_tokens": 104372,
+  "expected_min": 104279,
+  "prompt_tokens": 13057,
+  "decode_tokens": 91222,
+  "OK": true,
+  "n": 100,
+  "out_tokens": 91322,
+  "wall_s": 798.9329681396484,
+  "tok_per_s": 114.30495879103276
+ },
+ "dev_JS_minus_f_a1": {
+  "hook_tokens": 381668,
+  "expected_min": 328669,
+  "prompt_tokens": 21569,
+  "decode_tokens": 307100,
+  "OK": true,
+  "n": 100,
+  "out_tokens": 307200,
+  "wall_s": 2602.621829509735,
+  "tok_per_s": 118.03482031727535
+ },
+ "dev_JS_minus_b_a0.5": {
+  "hook_tokens": 116399,
+  "expected_min": 116308,
+  "prompt_tokens": 21569,
+  "decode_tokens": 94739,
+  "OK": true,
+  "n": 100,
+  "out_tokens": 94839,
+  "wall_s": 849.0712654590607,
+  "tok_per_s": 111.69733785387749
  }
 }
