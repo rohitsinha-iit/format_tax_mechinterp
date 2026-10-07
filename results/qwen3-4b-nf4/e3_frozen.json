@@ -1,0 +1,44 @@
+{
+ "tag": "qwen3-4b-nf4",
+ "frozen_at": "2026-10-07T16:03:04+00:00",
+ "git": "f14ddae4cff48a8da3dfb22cc651646b40fa72dc-dirty",
+ "alpha": 1.0,
+ "layer": 22,
+ "scope": "all positions (prompt + generated)",
+ "eval_settings": {
+  "E3-S": [
+   "FF",
+   "plus_b",
+   1.0
+  ],
+  "E3-Sr": [
+   "FF",
+   "plus_r0",
+   1.0
+  ]
+ },
+ "judged": [
+  "E3-S"
+ ],
+ "random_control_vector": "r0 (seed 100), \u22a5 b\u0302 and f\u0302, norm k",
+ "vectors_sha256": "ce8d3dad41f49be62f98c66362b5cf1add5165b8c9e8b69e43ce7676ab80c5a5",
+ "prefix_caching": false,
+ "backend": "vLLM + hook",
+ "criteria": {
+  "S1": "output tokens FF+b < FF, paired one-sided Wilcoxon p<0.05, and FF+b < FF+r0 (paired, p<0.05)",
+  "S2": "acc(FF+b) < acc(FF): paired bootstrap 95% CI excludes 0 (+ exact McNemar)"
+ },
+ "labels": "E3-S: math-verify + judge (\u00a76.4 rule); control E3-Sr: math-verify only (user decision)",
+ "dev_safety": {
+  "JS|minus_b": {
+   "degenerate_increase": 0.01,
+   "validity_drop": 0.26,
+   "PASS": false
+  },
+  "FF|plus_b": {
+   "degenerate_increase": 0.0,
+   "PASS": true
+  }
+ },
+ "necessity_arm": "NOT RUN on eval: JS\u2212b failed the pre-specified dev safety rule at \u03b1=0.5 and \u03b1=1 (lenient-validity drop 17 and 26 pp > 5 pp; markdown style reinstated). User decision 2026-10-07."
+}

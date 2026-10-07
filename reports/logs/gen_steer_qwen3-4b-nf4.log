@@ -76,3 +76,39 @@
 [2026-10-07T10:28:08+00:00] vLLM engine kwargs: {'model': 'Qwen/Qwen3-4B', 'quantization': 'bitsandbytes', 'dtype': 'bfloat16', 'max_model_len': 4096, 'gpu_memory_utilization': 0.8, 'enforce_eager': True, 'max_num_seqs': 8, 'seed': 0, 'enable_prefix_caching': False}
 [2026-10-07T10:29:14+00:00] generating dev_FF_plus_b_a0.5 (100 items)
 [2026-10-07T10:31:02+00:00]   25 done, 9461 out tokens, 87.3 tok/s, 1.8 min
+[2026-10-07T10:36:01+00:00]   50 done, 30087 out tokens, 73.8 tok/s, 6.8 min
+[2026-10-07T11:24:36+00:00]   75 done, 54252 out tokens, 16.3 tok/s, 55.4 min
+[2026-10-07T14:50:45+00:00] dev_FF_plus_b_a0.5: 100 items, 97 done, 3 to run
+[2026-10-07T14:50:57+00:00] dev_FF_plus_b_a1.5: 100 items, 0 done, 100 to run
+[2026-10-07T14:51:09+00:00] dev_FF_plus_b_a2: 100 items, 0 done, 100 to run
+[2026-10-07T14:51:21+00:00] dev_FF_plus_r1_a1: 100 items, 0 done, 100 to run
+[2026-10-07T14:51:33+00:00] dev_FF_plus_r2_a1: 100 items, 0 done, 100 to run
+[2026-10-07T14:51:38+00:00] vLLM engine kwargs: {'model': 'Qwen/Qwen3-4B', 'quantization': 'bitsandbytes', 'dtype': 'bfloat16', 'max_model_len': 4096, 'gpu_memory_utilization': 0.8, 'enforce_eager': True, 'max_num_seqs': 8, 'seed': 0, 'enable_prefix_caching': False}
+[2026-10-07T14:52:33+00:00] generating dev_FF_plus_b_a0.5 (3 items)
+[2026-10-07T14:54:50+00:00] finished dev_FF_plus_b_a0.5: {'n': 3, 'out_tokens': 4316, 'wall_s': 136.8136374950409, 'tok_per_s': 31.54656274785796}; hook tokens 4784 vs expected ≥4781 -> OK
+[2026-10-07T14:54:51+00:00] generating dev_FF_plus_b_a1.5 (100 items)
+[2026-10-07T14:56:23+00:00]   25 done, 6995 out tokens, 75.8 tok/s, 1.5 min
+[2026-10-07T14:58:45+00:00]   50 done, 20464 out tokens, 87.4 tok/s, 3.9 min
+[2026-10-07T15:01:55+00:00]   75 done, 39682 out tokens, 93.4 tok/s, 7.1 min
+[2026-10-07T15:06:22+00:00]   100 done, 63261 out tokens, 91.5 tok/s, 11.5 min
+[2026-10-07T15:06:22+00:00] finished dev_FF_plus_b_a1.5: {'n': 100, 'out_tokens': 63261, 'wall_s': 691.1270534992218, 'tok_per_s': 91.53309753930972}; hook tokens 76313 vs expected ≥76218 -> OK
+[2026-10-07T15:06:22+00:00] generating dev_FF_plus_b_a2 (100 items)
+[2026-10-07T15:07:37+00:00]   25 done, 5934 out tokens, 78.8 tok/s, 1.3 min
+[2026-10-07T15:09:20+00:00]   50 done, 16139 out tokens, 90.5 tok/s, 3.0 min
+[2026-10-07T15:11:51+00:00]   75 done, 29450 out tokens, 89.4 tok/s, 5.5 min
+[2026-10-07T15:14:35+00:00]   100 done, 49114 out tokens, 99.6 tok/s, 8.2 min
+[2026-10-07T15:14:35+00:00] finished dev_FF_plus_b_a2: {'n': 100, 'out_tokens': 49114, 'wall_s': 493.18516206741333, 'tok_per_s': 99.58531557217981}; hook tokens 62167 vs expected ≥62071 -> OK
+[2026-10-07T15:14:36+00:00] generating dev_FF_plus_r1_a1 (100 items)
+[2026-10-07T15:16:42+00:00]   25 done, 10393 out tokens, 82.1 tok/s, 2.1 min
+[2026-10-07T15:23:48+00:00]   50 done, 32511 out tokens, 58.9 tok/s, 9.2 min
+[2026-10-07T15:30:11+00:00]   75 done, 58020 out tokens, 62.0 tok/s, 15.6 min
+[2026-10-07T15:37:52+00:00]   100 done, 87309 out tokens, 62.5 tok/s, 23.3 min
+[2026-10-07T15:37:53+00:00] finished dev_FF_plus_r1_a1: {'n': 100, 'out_tokens': 87309, 'wall_s': 1396.8720123767853, 'tok_per_s': 62.50322092962781}; hook tokens 100358 vs expected ≥100266 -> OK
+[2026-10-07T15:37:54+00:00] generating dev_FF_plus_r2_a1 (100 items)
+[2026-10-07T15:41:24+00:00]   25 done, 11694 out tokens, 55.9 tok/s, 3.5 min
+[2026-10-07T15:49:24+00:00]   50 done, 43224 out tokens, 62.7 tok/s, 11.5 min
+[2026-10-07T15:56:48+00:00]   75 done, 70234 out tokens, 61.9 tok/s, 18.9 min
+[2026-10-07T16:01:51+00:00]   100 done, 98131 out tokens, 68.3 tok/s, 23.9 min
+[2026-10-07T16:01:51+00:00] finished dev_FF_plus_r2_a1: {'n': 100, 'out_tokens': 98131, 'wall_s': 1436.7547047138214, 'tok_per_s': 68.3004549614794}; hook tokens 111178 vs expected ≥111088 -> OK
+[2026-10-07T16:03:26+00:00] eval_FF_plus_b_a1: 500 items, 0 done, 500 to run
+[2026-10-07T16:03:28+00:00] eval_FF_plus_r0_a1: 500 items, 0 done, 500 to run

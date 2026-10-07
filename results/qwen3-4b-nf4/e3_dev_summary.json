@@ -1,0 +1,187 @@
+{
+ "tag": "qwen3-4b-nf4",
+ "time": "2026-10-07T16:02:57+00:00",
+ "settings": [
+  {
+   "setting": "dev_FF_none_a0",
+   "cond": "FF",
+   "n": 100,
+   "median_out_tok": 613.5,
+   "median_paired_dtok_vs_unsteered": 0.0,
+   "mv_acc": 0.78,
+   "trunc": 0.09,
+   "degenerate": 0.0,
+   "hook_ok": true,
+   "median_reasoning_span_tok": NaN,
+   "lenient_valid": NaN
+  },
+  {
+   "setting": "dev_FF_plus_b_a0.5",
+   "cond": "FF",
+   "n": 100,
+   "median_out_tok": 510.5,
+   "median_paired_dtok_vs_unsteered": -94.0,
+   "mv_acc": 0.8,
+   "trunc": 0.03,
+   "degenerate": 0.0,
+   "hook_ok": true,
+   "median_reasoning_span_tok": NaN,
+   "lenient_valid": NaN
+  },
+  {
+   "setting": "dev_FF_plus_b_a1",
+   "cond": "FF",
+   "n": 100,
+   "median_out_tok": 438.5,
+   "median_paired_dtok_vs_unsteered": -155.0,
+   "mv_acc": 0.77,
+   "trunc": 0.04,
+   "degenerate": 0.0,
+   "hook_ok": true,
+   "median_reasoning_span_tok": NaN,
+   "lenient_valid": NaN
+  },
+  {
+   "setting": "dev_FF_plus_b_a1.5",
+   "cond": "FF",
+   "n": 100,
+   "median_out_tok": 373.0,
+   "median_paired_dtok_vs_unsteered": -192.5,
+   "mv_acc": 0.6,
+   "trunc": 0.05,
+   "degenerate": 0.0,
+   "hook_ok": true,
+   "median_reasoning_span_tok": NaN,
+   "lenient_valid": NaN
+  },
+  {
+   "setting": "dev_FF_plus_b_a2",
+   "cond": "FF",
+   "n": 100,
+   "median_out_tok": 332.5,
+   "median_paired_dtok_vs_unsteered": -244.0,
+   "mv_acc": 0.41,
+   "trunc": 0.04,
+   "degenerate": 0.0,
+   "hook_ok": true,
+   "median_reasoning_span_tok": NaN,
+   "lenient_valid": NaN
+  },
+  {
+   "setting": "dev_FF_plus_r0_a1",
+   "cond": "FF",
+   "n": 100,
+   "median_out_tok": 600.0,
+   "median_paired_dtok_vs_unsteered": -22.0,
+   "mv_acc": 0.76,
+   "trunc": 0.07,
+   "degenerate": 0.0,
+   "hook_ok": true,
+   "median_reasoning_span_tok": NaN,
+   "lenient_valid": NaN
+  },
+  {
+   "setting": "dev_FF_plus_r1_a1",
+   "cond": "FF",
+   "n": 100,
+   "median_out_tok": 548.0,
+   "median_paired_dtok_vs_unsteered": -45.5,
+   "mv_acc": 0.67,
+   "trunc": 0.08,
+   "degenerate": 0.0,
+   "hook_ok": true,
+   "median_reasoning_span_tok": NaN,
+   "lenient_valid": NaN
+  },
+  {
+   "setting": "dev_FF_plus_r2_a1",
+   "cond": "FF",
+   "n": 100,
+   "median_out_tok": 618.5,
+   "median_paired_dtok_vs_unsteered": 0.0,
+   "mv_acc": 0.7,
+   "trunc": 0.1,
+   "degenerate": 0.0,
+   "hook_ok": true,
+   "median_reasoning_span_tok": NaN,
+   "lenient_valid": NaN
+  },
+  {
+   "setting": "dev_JS_minus_b_a0.5",
+   "cond": "JS",
+   "n": 100,
+   "median_out_tok": 612.0,
+   "median_paired_dtok_vs_unsteered": 124.0,
+   "mv_acc": 0.67,
+   "trunc": 0.09,
+   "degenerate": 0.0,
+   "hook_ok": true,
+   "median_reasoning_span_tok": 400.0,
+   "lenient_valid": 0.11
+  },
+  {
+   "setting": "dev_JS_minus_b_a1",
+   "cond": "JS",
+   "n": 100,
+   "median_out_tok": 1265.5,
+   "median_paired_dtok_vs_unsteered": 371.0,
+   "mv_acc": 0.63,
+   "trunc": 0.19,
+   "degenerate": 0.01,
+   "hook_ok": true,
+   "median_reasoning_span_tok": 700.0,
+   "lenient_valid": 0.02
+  },
+  {
+   "setting": "dev_JS_minus_f_a1",
+   "cond": "JS",
+   "n": 100,
+   "median_out_tok": 3072.0,
+   "median_paired_dtok_vs_unsteered": 2653.0,
+   "mv_acc": 0.0,
+   "trunc": 1.0,
+   "degenerate": 0.02,
+   "hook_ok": true,
+   "median_reasoning_span_tok": NaN,
+   "lenient_valid": 0.0
+  },
+  {
+   "setting": "dev_JS_minus_r0_a1",
+   "cond": "JS",
+   "n": 100,
+   "median_out_tok": 472.5,
+   "median_paired_dtok_vs_unsteered": 15.0,
+   "mv_acc": 0.74,
+   "trunc": 0.02,
+   "degenerate": 0.0,
+   "hook_ok": true,
+   "median_reasoning_span_tok": 202.5,
+   "lenient_valid": 0.22
+  },
+  {
+   "setting": "dev_JS_none_a0",
+   "cond": "JS",
+   "n": 100,
+   "median_out_tok": 419.0,
+   "median_paired_dtok_vs_unsteered": 0.0,
+   "mv_acc": 0.73,
+   "trunc": 0.03,
+   "degenerate": 0.0,
+   "hook_ok": true,
+   "median_reasoning_span_tok": 250.0,
+   "lenient_valid": 0.28
+  }
+ ],
+ "safety_alpha1": {
+  "JS|minus_b": {
+   "degenerate_increase": 0.01,
+   "validity_drop": 0.26,
+   "PASS": false
+  },
+  "FF|plus_b": {
+   "degenerate_increase": 0.0,
+   "PASS": true
+  }
+ },
+ "SAFE": false
+}
