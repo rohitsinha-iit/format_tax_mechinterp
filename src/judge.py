@@ -62,10 +62,11 @@ def dataset_order():
     return {r["uid"]: i for i, r in enumerate(m)}, {r["uid"]: r for r in m}
 
 
-def select_items(tag: str, cond: str, order: dict) -> list[dict]:
+def select_items(tag: str, cond: str, order: dict, mv_path=None) -> list[dict]:
     """(a) every mv-incorrect item; (b) 10% of mv-correct items, fresh default_rng(1) per model x cond."""
     jc = load_cfg("e0")["judge"]
-    rows = sorted(read_jsonl(OUTPUTS / tag / f"e0_{cond}_mv.jsonl"), key=lambda r: order[r["uid"]])
+    mv_path = mv_path or OUTPUTS / tag / f"e0_{cond}_mv.jsonl"
+    rows = sorted(read_jsonl(mv_path), key=lambda r: order[r["uid"]])
     wrong = [dict(r, role="mv_wrong") for r in rows if not r["mv_correct"]]
     right = [r for r in rows if r["mv_correct"]]
     k = int(round(jc["calib_frac"] * len(right)))
@@ -109,7 +110,17 @@ def run(args):
 
     # ---- work list
     jobs = []  # (seed, path, items)
-    if not args.selfcons:
+    if args.e3_names:  # E3 steered eval settings: outputs/{tag}/e3/{name}_mv.jsonl (MATH-500 only)
+        jdir = OUTPUTS / tag / "e3" / "judge"
+        for c in args.e3_names.split(","):
+            path = jdir / f"{c}_judge_seed{jc['seed']}.jsonl"
+            items = select_items(tag, c, order, OUTPUTS / tag / "e3" / f"{c}_mv.jsonl")
+            have = done_uids(path)
+            log(f"judge {tag} {c}: {len(items)} items "
+                f"({sum(i['role'] == 'mv_wrong' for i in items)} mv_wrong, "
+                f"{sum(i['role'] == 'calib' for i in items)} calib); {len(have)} done", logfile)
+            jobs.append((jc["seed"], path, [i for i in items if i["uid"] not in have]))
+    elif not args.selfcons:
         for c in conds:
             path = jdir / f"e0_{c}_judge_seed{jc['seed']}.jsonl"
             items = select_items(tag, c, order)
@@ -261,6 +272,7 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--model", required=True, choices=["qwen3-4b", "qwen3-8b"], help="generator whose outputs are judged")
     ap.add_argument("--conds", default="FF,JS,JC")
+    ap.add_argument("--e3-names", default=None, help="E3 eval setting names to judge instead of E0 conditions")
     ap.add_argument("--selfcons", action="store_true")
     ap.add_argument("--report-only", action="store_true")
     ap.add_argument("--backend", default="hf", choices=["hf", "vllm"])

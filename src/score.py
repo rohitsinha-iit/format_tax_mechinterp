@@ -178,6 +178,32 @@ def reasoning_tokens(tok, parsed: dict | None) -> int | None:
     return None
 
 
+_REASONING_OPEN = re.compile(r'"reasoning"\s*:\s*"')
+_REASONING_CLOSE = re.compile(r'"\s*,\s*"answer"\s*:')
+
+
+def reasoning_span(text: str) -> tuple[str | None, str]:
+    """Tolerant reasoning-field extraction for E3 N1 (approved 2026-10-07): parse JSON if possible, else take the raw
+    span between `"reasoning": "` and `", "answer":` (or to the end if the answer key never comes, e.g. truncation).
+    Returns (text, method) with method in {json, raw_span, raw_to_end, none}."""
+    p = parse_json_output(text or "")
+    if p["lenient_valid"]:
+        return p["obj"]["reasoning"], "json"
+    m = _REASONING_OPEN.search(text or "")
+    if not m:
+        return None, "none"
+    e = _REASONING_CLOSE.search(text, m.end())
+    return (text[m.end():e.start()], "raw_span") if e else (text[m.end():], "raw_to_end")
+
+
+def is_degenerate(text: str, finish_reason: str) -> bool:
+    """Truncated AND the last 600 chars are repetitive (<= 4 distinct 40-char chunks) or blank."""
+    if finish_reason != "length":
+        return False
+    t = (text or "")[-600:]
+    return (not t.strip()) or len({t[i:i + 40] for i in range(0, 560, 40)}) <= 4
+
+
 def score_record(r: dict, tok) -> dict:
     cond = r["condition"]
     parsed = parse_json_output(r["output_text"]) if cond in JSON_CONDS else None
@@ -195,22 +221,32 @@ def score_record(r: dict, tok) -> dict:
     return out
 
 
+def mv_file(src, dst, tok, label: str):
+    rows = read_jsonl(src)
+    if not rows:
+        print(f"skip {label}: no outputs")
+        return
+    uids = [r["uid"] for r in rows]
+    assert len(uids) == len(set(uids)), f"duplicate uids in {src}"
+    scored = []
+    for r in rows:
+        x = score_record(r, tok)
+        rs, how = reasoning_span(r["output_text"]) if r["condition"] in JSON_CONDS else (None, None)
+        x.update(reasoning_span_tokens=None if rs is None else len(tok(rs, add_special_tokens=False)["input_ids"]),
+                 reasoning_span_method=how, degenerate=is_degenerate(r["output_text"], r["finish_reason"]))
+        scored.append(x)
+    write_jsonl(dst, scored, meta={"stage": "mv", "label": label, "n": len(scored)})
+    acc = sum(s["mv_correct"] for s in scored) / len(scored)
+    print(f"{label}: n={len(scored)} mv_acc={acc:.3f}")
+
+
 def stage_mv(model: str, conds, subdir=None):
     from transformers import AutoTokenizer
     info = model_info(model)
     tok = AutoTokenizer.from_pretrained(info["hf_id"])
     d = OUTPUTS / info["tag"] / (subdir or "")
     for c in conds:
-        rows = read_jsonl(d / f"e0_{c}.jsonl")
-        if not rows:
-            print(f"skip {c}: no outputs")
-            continue
-        uids = [r["uid"] for r in rows]
-        assert len(uids) == len(set(uids)), f"duplicate uids in e0_{c}"
-        scored = [score_record(r, tok) for r in rows]
-        write_jsonl(d / f"e0_{c}_mv.jsonl", scored, meta={"stage": "mv", "condition": c, "n": len(scored)})
-        acc = sum(s["mv_correct"] for s in scored) / len(scored)
-        print(f"{info['tag']} {c}: n={len(scored)} mv_acc={acc:.3f}")
+        mv_file(d / f"e0_{c}.jsonl", d / f"e0_{c}_mv.jsonl", tok, f"{info['tag']} {c}")
 
 
 def final_label(mv_correct: bool, judge: dict | None) -> tuple[bool, bool]:
@@ -226,33 +262,53 @@ def stage_final(model: str, conds, subdir=None):
     info = model_info(model)
     d = OUTPUTS / info["tag"] / (subdir or "")
     for c in conds:
-        rows = read_jsonl(d / f"e0_{c}_mv.jsonl")
-        if not rows:
-            print(f"skip {c}: no mv-scored outputs")
-            continue
-        jrows = {r["uid"]: r for r in read_jsonl(d / "judge" / f"e0_{c}_judge_seed0.jsonl")}
-        out, n_missing = [], 0
-        for r in rows:
-            j = jrows.get(r["uid"])
-            need = not r["mv_correct"]
-            if need and j is None:
-                n_missing += 1
-            fc, jf = final_label(r["mv_correct"], j)
-            out.append(dict(r, judged=j is not None, judge_role=(j or {}).get("role"),
-                            judge_verdict=(j or {}).get("judge_verdict"),
-                            judge_failed=bool((j or {}).get("judge_failed", False)),
-                            label_from=("mv" if r["mv_correct"] else ("judge_failed" if jf else "judge")),
-                            judge_raw_tail=(j or {}).get("judge_raw_tail"), final_correct=fc))
-        assert n_missing == 0, f"{c}: {n_missing} mv-incorrect items lack a judge record"
-        write_jsonl(d / f"e0_{c}_scored.jsonl", out, meta={"stage": "final", "condition": c, "n": len(out)})
-        print(f"{info['tag']} {c}: final_acc={sum(o['final_correct'] for o in out) / len(out):.3f}")
+        final_file(d / f"e0_{c}_mv.jsonl", d / "judge" / f"e0_{c}_judge_seed0.jsonl", d / f"e0_{c}_scored.jsonl",
+                   f"{info['tag']} {c}")
+
+
+def final_file(mv_path, judge_path, out_path, label: str):
+    rows = read_jsonl(mv_path)
+    if not rows:
+        print(f"skip {label}: no mv-scored outputs")
+        return
+    jrows = {r["uid"]: r for r in read_jsonl(judge_path)}
+    out, n_missing = [], 0
+    for r in rows:
+        j = jrows.get(r["uid"])
+        need = not r["mv_correct"]
+        if need and j is None:
+            n_missing += 1
+        fc, jf = final_label(r["mv_correct"], j)
+        out.append(dict(r, judged=j is not None, judge_role=(j or {}).get("role"),
+                        judge_verdict=(j or {}).get("judge_verdict"),
+                        judge_failed=bool((j or {}).get("judge_failed", False)),
+                        label_from=("mv" if r["mv_correct"] else ("judge_failed" if jf else "judge")),
+                        judge_raw_tail=(j or {}).get("judge_raw_tail"), final_correct=fc))
+    assert n_missing == 0, f"{label}: {n_missing} mv-incorrect items lack a judge record"
+    write_jsonl(out_path, out, meta={"stage": "final", "label": label, "n": len(out)})
+    print(f"{label}: final_acc={sum(o['final_correct'] for o in out) / len(out):.3f}")
 
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--model", required=True, choices=["qwen3-4b", "qwen3-8b"])
-    ap.add_argument("--stage", required=True, choices=["mv", "final"])
+    ap.add_argument("--stage", required=True, choices=["mv", "final", "mv-e3", "final-e3"])
     ap.add_argument("--conds", default="FF,JS,JC")
     ap.add_argument("--subdir", default=None)
+    ap.add_argument("--names", default=None, help="E3 setting names (outputs/{tag}/e3/{name}.jsonl), comma-separated")
     a = ap.parse_args()
-    (stage_mv if a.stage == "mv" else stage_final)(a.model, a.conds.split(","), a.subdir)
+    if a.stage in ("mv", "final"):
+        (stage_mv if a.stage == "mv" else stage_final)(a.model, a.conds.split(","), a.subdir)
+    else:
+        info = model_info(a.model)
+        d = OUTPUTS / info["tag"] / "e3"
+        names = a.names.split(",") if a.names else sorted(p.stem for p in d.glob("*.jsonl")
+                                                          if not p.stem.endswith(("_mv", "_scored")))
+        if a.stage == "mv-e3":
+            from transformers import AutoTokenizer
+            tok = AutoTokenizer.from_pretrained(info["hf_id"])
+            for n in names:
+                mv_file(d / f"{n}.jsonl", d / f"{n}_mv.jsonl", tok, n)
+        else:
+            for n in names:
+                final_file(d / f"{n}_mv.jsonl", d / "judge" / f"{n}_judge_seed0.jsonl", d / f"{n}_scored.jsonl", n)
