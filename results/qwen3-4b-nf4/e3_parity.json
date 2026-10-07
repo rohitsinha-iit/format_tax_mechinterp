@@ -1,0 +1,459 @@
+{
+ "tag": "qwen3-4b-nf4",
+ "L_star": 22,
+ "by_setting": {
+  "JS|minus_b": {
+   "n": 20,
+   "top1_agreement": 1.0,
+   "mean_kl": 0.0037549655803053228
+  },
+  "FF|plus_b": {
+   "n": 20,
+   "top1_agreement": 1.0,
+   "mean_kl": 2.0052412142385894e-05
+  },
+  "JS|none": {
+   "n": 20,
+   "top1_agreement": 0.95,
+   "mean_kl": 0.006184798367496412
+  }
+ },
+ "steered_top1_agreement": 1.0,
+ "PASS": true,
+ "hook_token_counts_vllm": {
+  "JS|minus_b": {
+   "steered_tokens": 3918,
+   "prompt_tokens": 3918
+  },
+  "FF|plus_b": {
+   "steered_tokens": 2214,
+   "prompt_tokens": 2214
+  },
+  "JS|none": {
+   "steered_tokens": 0,
+   "prompt_tokens": 3918
+  }
+ },
+ "rows": [
+  {
+   "cond": "JS",
+   "vname": "minus_b",
+   "uid": "algebra/448",
+   "agree": true,
+   "kl": 1.616430606346462e-05
+  },
+  {
+   "cond": "JS",
+   "vname": "minus_b",
+   "uid": "algebra/989",
+   "agree": true,
+   "kl": 0.0067191598188464
+  },
+  {
+   "cond": "JS",
+   "vname": "minus_b",
+   "uid": "algebra/153",
+   "agree": true,
+   "kl": 0.0009761049221771708
+  },
+  {
+   "cond": "JS",
+   "vname": "minus_b",
+   "uid": "algebra/240",
+   "agree": true,
+   "kl": 0.02408758016077564
+  },
+  {
+   "cond": "JS",
+   "vname": "minus_b",
+   "uid": "algebra/779",
+   "agree": true,
+   "kl": 0.0026720576225450175
+  },
+  {
+   "cond": "JS",
+   "vname": "minus_b",
+   "uid": "algebra/850",
+   "agree": true,
+   "kl": 0.0004781459019953131
+  },
+  {
+   "cond": "JS",
+   "vname": "minus_b",
+   "uid": "algebra/1352",
+   "agree": true,
+   "kl": 0.0037399285987865416
+  },
+  {
+   "cond": "JS",
+   "vname": "minus_b",
+   "uid": "algebra/417",
+   "agree": true,
+   "kl": 0.004351042304623352
+  },
+  {
+   "cond": "JS",
+   "vname": "minus_b",
+   "uid": "algebra/453",
+   "agree": true,
+   "kl": 0.0007078905862069854
+  },
+  {
+   "cond": "JS",
+   "vname": "minus_b",
+   "uid": "algebra/534",
+   "agree": true,
+   "kl": 9.438029940969769e-05
+  },
+  {
+   "cond": "JS",
+   "vname": "minus_b",
+   "uid": "algebra/609",
+   "agree": true,
+   "kl": 0.0003774778205775633
+  },
+  {
+   "cond": "JS",
+   "vname": "minus_b",
+   "uid": "algebra/1723",
+   "agree": true,
+   "kl": 0.0029735319726327757
+  },
+  {
+   "cond": "JS",
+   "vname": "minus_b",
+   "uid": "algebra/396",
+   "agree": true,
+   "kl": 0.005921394988639375
+  },
+  {
+   "cond": "JS",
+   "vname": "minus_b",
+   "uid": "algebra/420",
+   "agree": true,
+   "kl": 0.004076588476676818
+  },
+  {
+   "cond": "JS",
+   "vname": "minus_b",
+   "uid": "algebra/620",
+   "agree": true,
+   "kl": 0.007084119687821667
+  },
+  {
+   "cond": "JS",
+   "vname": "minus_b",
+   "uid": "algebra/1242",
+   "agree": true,
+   "kl": 5.800568937790078e-05
+  },
+  {
+   "cond": "JS",
+   "vname": "minus_b",
+   "uid": "algebra/1492",
+   "agree": true,
+   "kl": 0.002543552615719839
+  },
+  {
+   "cond": "JS",
+   "vname": "minus_b",
+   "uid": "algebra/291",
+   "agree": true,
+   "kl": 6.334503565784497e-05
+  },
+  {
+   "cond": "JS",
+   "vname": "minus_b",
+   "uid": "algebra/413",
+   "agree": true,
+   "kl": 0.003351054021214151
+  },
+  {
+   "cond": "JS",
+   "vname": "minus_b",
+   "uid": "algebra/759",
+   "agree": true,
+   "kl": 0.004807786776358945
+  },
+  {
+   "cond": "FF",
+   "vname": "plus_b",
+   "uid": "algebra/448",
+   "agree": true,
+   "kl": 2.8336261979084394e-09
+  },
+  {
+   "cond": "FF",
+   "vname": "plus_b",
+   "uid": "algebra/989",
+   "agree": true,
+   "kl": 2.0378788549193765e-06
+  },
+  {
+   "cond": "FF",
+   "vname": "plus_b",
+   "uid": "algebra/153",
+   "agree": true,
+   "kl": 3.295520839659839e-05
+  },
+  {
+   "cond": "FF",
+   "vname": "plus_b",
+   "uid": "algebra/240",
+   "agree": true,
+   "kl": 0.00017662722968095937
+  },
+  {
+   "cond": "FF",
+   "vname": "plus_b",
+   "uid": "algebra/779",
+   "agree": true,
+   "kl": 1.6236983242244217e-05
+  },
+  {
+   "cond": "FF",
+   "vname": "plus_b",
+   "uid": "algebra/850",
+   "agree": true,
+   "kl": 6.416457910344678e-07
+  },
+  {
+   "cond": "FF",
+   "vname": "plus_b",
+   "uid": "algebra/1352",
+   "agree": true,
+   "kl": 1.8470150792020825e-05
+  },
+  {
+   "cond": "FF",
+   "vname": "plus_b",
+   "uid": "algebra/417",
+   "agree": true,
+   "kl": 4.036365154498949e-08
+  },
+  {
+   "cond": "FF",
+   "vname": "plus_b",
+   "uid": "algebra/453",
+   "agree": true,
+   "kl": 3.2628805525702974e-07
+  },
+  {
+   "cond": "FF",
+   "vname": "plus_b",
+   "uid": "algebra/534",
+   "agree": true,
+   "kl": 1.4732011563136142e-05
+  },
+  {
+   "cond": "FF",
+   "vname": "plus_b",
+   "uid": "algebra/609",
+   "agree": true,
+   "kl": 6.730332459345188e-05
+  },
+  {
+   "cond": "FF",
+   "vname": "plus_b",
+   "uid": "algebra/1723",
+   "agree": true,
+   "kl": 2.826836120386403e-09
+  },
+  {
+   "cond": "FF",
+   "vname": "plus_b",
+   "uid": "algebra/396",
+   "agree": true,
+   "kl": 5.401280900183974e-06
+  },
+  {
+   "cond": "FF",
+   "vname": "plus_b",
+   "uid": "algebra/420",
+   "agree": true,
+   "kl": 5.150602743153094e-08
+  },
+  {
+   "cond": "FF",
+   "vname": "plus_b",
+   "uid": "algebra/620",
+   "agree": true,
+   "kl": 6.186579896260267e-08
+  },
+  {
+   "cond": "FF",
+   "vname": "plus_b",
+   "uid": "algebra/1242",
+   "agree": true,
+   "kl": 1.4881364625358495e-05
+  },
+  {
+   "cond": "FF",
+   "vname": "plus_b",
+   "uid": "algebra/1492",
+   "agree": true,
+   "kl": 2.1012670455241426e-08
+  },
+  {
+   "cond": "FF",
+   "vname": "plus_b",
+   "uid": "algebra/291",
+   "agree": true,
+   "kl": 1.2412270318945633e-05
+  },
+  {
+   "cond": "FF",
+   "vname": "plus_b",
+   "uid": "algebra/413",
+   "agree": true,
+   "kl": 3.7487111066954274e-05
+  },
+  {
+   "cond": "FF",
+   "vname": "plus_b",
+   "uid": "algebra/759",
+   "agree": true,
+   "kl": 1.355086355941194e-06
+  },
+  {
+   "cond": "JS",
+   "vname": "none",
+   "uid": "algebra/448",
+   "agree": true,
+   "kl": 1.2027906467983e-05
+  },
+  {
+   "cond": "JS",
+   "vname": "none",
+   "uid": "algebra/989",
+   "agree": true,
+   "kl": 0.00012674678217454606
+  },
+  {
+   "cond": "JS",
+   "vname": "none",
+   "uid": "algebra/153",
+   "agree": true,
+   "kl": 4.787939199709159e-05
+  },
+  {
+   "cond": "JS",
+   "vname": "none",
+   "uid": "algebra/240",
+   "agree": true,
+   "kl": 0.0002836688394415456
+  },
+  {
+   "cond": "JS",
+   "vname": "none",
+   "uid": "algebra/779",
+   "agree": true,
+   "kl": 1.6753367313559214e-05
+  },
+  {
+   "cond": "JS",
+   "vname": "none",
+   "uid": "algebra/850",
+   "agree": true,
+   "kl": 0.0002289566877695378
+  },
+  {
+   "cond": "JS",
+   "vname": "none",
+   "uid": "algebra/1352",
+   "agree": true,
+   "kl": 0.00013771118502433024
+  },
+  {
+   "cond": "JS",
+   "vname": "none",
+   "uid": "algebra/417",
+   "agree": true,
+   "kl": 0.0008758447731408312
+  },
+  {
+   "cond": "JS",
+   "vname": "none",
+   "uid": "algebra/453",
+   "agree": true,
+   "kl": 0.00853585682094898
+  },
+  {
+   "cond": "JS",
+   "vname": "none",
+   "uid": "algebra/534",
+   "agree": true,
+   "kl": 0.008533981878194485
+  },
+  {
+   "cond": "JS",
+   "vname": "none",
+   "uid": "algebra/609",
+   "agree": false,
+   "kl": 0.06715343357800706
+  },
+  {
+   "cond": "JS",
+   "vname": "none",
+   "uid": "algebra/1723",
+   "agree": true,
+   "kl": 0.0007263397934108084
+  },
+  {
+   "cond": "JS",
+   "vname": "none",
+   "uid": "algebra/396",
+   "agree": true,
+   "kl": 7.922637516203762e-05
+  },
+  {
+   "cond": "JS",
+   "vname": "none",
+   "uid": "algebra/420",
+   "agree": true,
+   "kl": 0.0003510570304709158
+  },
+  {
+   "cond": "JS",
+   "vname": "none",
+   "uid": "algebra/620",
+   "agree": true,
+   "kl": 0.00015435865383415213
+  },
+  {
+   "cond": "JS",
+   "vname": "none",
+   "uid": "algebra/1242",
+   "agree": true,
+   "kl": 0.002764628521486057
+  },
+  {
+   "cond": "JS",
+   "vname": "none",
+   "uid": "algebra/1492",
+   "agree": true,
+   "kl": 0.00012399908084197267
+  },
+  {
+   "cond": "JS",
+   "vname": "none",
+   "uid": "algebra/291",
+   "agree": true,
+   "kl": 0.0024452376099198944
+  },
+  {
+   "cond": "JS",
+   "vname": "none",
+   "uid": "algebra/413",
+   "agree": true,
+   "kl": 0.02967249059585534
+  },
+  {
+   "cond": "JS",
+   "vname": "none",
+   "uid": "algebra/759",
+   "agree": true,
+   "kl": 0.0014257684784671214
+  }
+ ]
+}

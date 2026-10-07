@@ -33,6 +33,8 @@ def engine_kwargs(info: dict, args=None) -> dict:
         if args.max_num_seqs: kw["max_num_seqs"] = args.max_num_seqs
         if args.gpu_mem: kw["gpu_memory_utilization"] = args.gpu_mem
         if args.max_model_len: kw["max_model_len"] = args.max_model_len
+        # steering (E3): cached KV computed under another steering vector must never be reused
+        if getattr(args, "no_prefix_caching", False): kw["enable_prefix_caching"] = False
     # VERIFY(§2.1): older vLLM needs load_format="bitsandbytes" alongside quantization.
     import inspect
     import vllm
@@ -233,6 +235,7 @@ def add_engine_args(ap):
     ap.add_argument("--max-num-seqs", type=int, default=None)
     ap.add_argument("--gpu-mem", type=float, default=None)
     ap.add_argument("--max-model-len", type=int, default=None)
+    ap.add_argument("--no-prefix-caching", action="store_true")
 
 
 if __name__ == "__main__":

@@ -34,6 +34,23 @@ def load_extract_set() -> list[dict]:
         return [r for r in map(json.loads, f) if "_meta" not in r]
 
 
+def load_dev_set() -> list[dict]:
+    """The 100 reserved dev problems (E3 calibration), rebuilt from hendrycks_math by uid in saved order."""
+    from datasets import load_dataset
+    cfg = load_cfg("e1")["data"]
+    uids = json.load(open(DATA / "dev_set_ids.json"))["uids"]
+    cache = {}
+    rows = []
+    for uid in uids:
+        sub, i = uid.split("/")
+        if sub not in cache:
+            cache[sub] = load_dataset(cfg["train_source"], sub, split="train")
+        r = cache[sub][int(i)]
+        rows.append({"uid": uid, "subject": sub, "level": r["level"], "problem": r["problem"],
+                     "solution": r["solution"]})
+    return rows
+
+
 def _largest_remainder(sizes: "OrderedDict[str, int]", n: int) -> dict:
     total = sum(sizes.values())
     raw = {k: n * v / total for k, v in sizes.items()}
