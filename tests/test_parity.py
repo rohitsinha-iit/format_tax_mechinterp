@@ -27,14 +27,14 @@ def _prompts(tok):
     return [dict(uid=r["uid"], cond=c, **P.build_prompt(tok, c, r["problem"])) for r in rows for c in CONDS]
 
 
-def stage_vllm(model: str):
+def stage_vllm(model: str, eargs=None):
     from vllm import SamplingParams
     from transformers import AutoTokenizer
     from src.gen_vllm import make_llm
     info = model_info(model)
     tok = AutoTokenizer.from_pretrained(info["hf_id"])
     items = _prompts(tok)
-    llm, ekw = make_llm(info)
+    llm, ekw = make_llm(info, eargs)
     sp = SamplingParams(temperature=0.0, max_tokens=1, logprobs=TOPK, seed=0)
     outs = llm.generate([{"prompt_token_ids": it["prompt_ids"]} for it in items], sp)
     res = []
@@ -106,5 +106,7 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--model", required=True, choices=list(MODEL_KEYS))
     ap.add_argument("--stage", required=True, choices=["vllm", "hf"])
+    from src.gen_vllm import add_engine_args
+    add_engine_args(ap)
     a = ap.parse_args()
-    stage_vllm(a.model) if a.stage == "vllm" else stage_hf(a.model)
+    stage_vllm(a.model, a) if a.stage == "vllm" else stage_hf(a.model)

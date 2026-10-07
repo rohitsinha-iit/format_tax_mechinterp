@@ -201,8 +201,14 @@ def main(a):
           "## Notes", "",
           "- Final label = math-verify if correct, else the Qwen3-8B thinking judge verdict (pre-registered rule §6.4); "
           "judge failures count as incorrect.",
-          "- Known limitation: for Qwen3-8B outputs the judge is the same model. Mitigations: math-verify is primary, the judge "
-          "task is narrow equivalence, inputs are format-blind, and the human audit is a gate.",
+          "- The handoff's same-model-judge limitation does not arise: Qwen3-8B was dropped as a generator (DEVIATIONS D3), "
+          "so the judge (Qwen3-8B NF4, HF transformers, thinking mode; D4) never grades its own outputs.",
+          "- Judge failures (2,048-token thinking cap reached) are counted as incorrect per §6.4; per-condition counts are in "
+          "the table. A manual check of the 20 FF failures found all of them to be genuinely wrong answers.",
+          "- Human audit (98 items: 48 flip, 30 NOT_EQUIVALENT, 20 calibration) agreed 98/98 with the judge (κ = 1.0): "
+          "`reports/audit_agreement_qwen3-4b-nf4.md`.",
+          "- 2T was generated with max_model_len = 7168 (user-approved) so the 3,072-token budget is never capped by "
+          "the prompt, which contains the full FF output.",
           "- JSON-decoded control characters that came from LaTeX commands (e.g. `\\f`rac → form-feed) are repaired in "
           "the extracted candidate (`latex_escape_repaired`; counts in the table summary JSON).",
           f"- Figures: `figs/e0_acc_by_condition_{tag}.png`, `figs/e0_flip_by_dtok_decile_{tag}.png`."]

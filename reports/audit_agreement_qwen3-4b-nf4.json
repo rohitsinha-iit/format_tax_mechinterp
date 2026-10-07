@@ -1,0 +1,40 @@
+{
+ "tag": "qwen3-4b-nf4",
+ "n_labeled": 98,
+ "n_unlabeled": 0,
+ "overall_agreement": 1.0,
+ "flip_agreement": 1.0,
+ "cohen_kappa": 1.0,
+ "by_category": {
+  "calib": {
+   "mean": 1.0,
+   "count": 20
+  },
+  "flip": {
+   "mean": 1.0,
+   "count": 48
+  },
+  "not_equiv": {
+   "mean": 1.0,
+   "count": 30
+  }
+ },
+ "by_condition": {
+  "FF": {
+   "mean": 1.0,
+   "count": 26
+  },
+  "JC": {
+   "mean": 1.0,
+   "count": 36
+  },
+  "JS": {
+   "mean": 1.0,
+   "count": 36
+  }
+ },
+ "accept_overall": true,
+ "accept_flip": true,
+ "ACCEPTED": true,
+ "disagreements": []
+}

@@ -1,0 +1,325 @@
+{
+ "tag": "qwen3-4b-nf4",
+ "time": "2026-10-07T03:18:38+00:00",
+ "git": "9993bd94147da552a99c039fce891c794eacd121-dirty",
+ "table": [
+  {
+   "condition": "FF",
+   "n": 500,
+   "acc": 0.814,
+   "acc_mv": 0.794,
+   "strict_valid": null,
+   "lenient_valid": null,
+   "tok_median": 558.5,
+   "tok_q25": 365.25,
+   "tok_q75": 1034.5,
+   "reasoning_tok_median": null,
+   "reasoning_tok_q25": null,
+   "reasoning_tok_q75": null,
+   "truncation_rate": 0.082,
+   "judge_failed": 20,
+   "n_judged_mv_wrong": 103,
+   "judge_flipped_to_correct": 10,
+   "extract_none": 37,
+   "latex_escape_repaired": 0
+  },
+  {
+   "condition": "JS",
+   "n": 500,
+   "acc": 0.766,
+   "acc_mv": 0.722,
+   "strict_valid": 0.292,
+   "lenient_valid": 0.294,
+   "tok_median": 380.0,
+   "tok_q25": 213.75,
+   "tok_q75": 796.5,
+   "reasoning_tok_median": 176.0,
+   "reasoning_tok_q25": 128.0,
+   "reasoning_tok_q75": 251.5,
+   "truncation_rate": 0.052,
+   "judge_failed": 24,
+   "n_judged_mv_wrong": 139,
+   "judge_flipped_to_correct": 22,
+   "extract_none": 27,
+   "latex_escape_repaired": 0
+  },
+  {
+   "condition": "JC",
+   "n": 500,
+   "acc": 0.622,
+   "acc_mv": 0.59,
+   "strict_valid": 0.834,
+   "lenient_valid": 0.834,
+   "tok_median": 363.5,
+   "tok_q25": 208.0,
+   "tok_q75": 735.75,
+   "reasoning_tok_median": 293.0,
+   "reasoning_tok_q25": 178.0,
+   "reasoning_tok_q75": 459.0,
+   "truncation_rate": 0.166,
+   "judge_failed": 16,
+   "n_judged_mv_wrong": 205,
+   "judge_flipped_to_correct": 16,
+   "extract_none": 83,
+   "latex_escape_repaired": 3
+  }
+ ],
+ "tax": {
+  "JS": {
+   "tax_pp": 4.8,
+   "ci95": [
+    1.4000000000000001,
+    8.200000000000001
+   ]
+  },
+  "JC": {
+   "tax_pp": 19.2,
+   "ci95": [
+    15.0,
+    23.400000000000002
+   ]
+  }
+ },
+ "tax_mv_only": {
+  "JS": {
+   "tax_pp": 7.199999999999999,
+   "ci95": [
+    3.4000000000000004,
+    11.0
+   ]
+  },
+  "JC": {
+   "tax_pp": 20.4,
+   "ci95": [
+    16.0,
+    24.8
+   ]
+  }
+ },
+ "mcnemar": {
+  "FF_vs_JS": {
+   "table": [
+    [
+     355,
+     52
+    ],
+    [
+     28,
+     65
+    ]
+   ],
+   "a_only": 52,
+   "b_only": 28,
+   "statistic": 28.0,
+   "p": 0.009682849923057572
+  },
+  "FF_vs_JC": {
+   "table": [
+    [
+     293,
+     114
+    ],
+    [
+     18,
+     75
+    ]
+   ],
+   "a_only": 114,
+   "b_only": 18,
+   "statistic": 18.0,
+   "p": 2.984204132384485e-18
+  },
+  "JS_vs_JC": {
+   "table": [
+    [
+     295,
+     88
+    ],
+    [
+     16,
+     101
+    ]
+   ],
+   "a_only": 88,
+   "b_only": 16,
+   "statistic": 16.0,
+   "p": 3.1797513451124715e-13
+  }
+ },
+ "flip": {
+  "n_flip": 52,
+  "n_rescue": 28,
+  "dtok_median": -140.0,
+  "by_decile": [
+   {
+    "decile": 1,
+    "n": 50,
+    "flips": 5,
+    "flip_rate": 0.1,
+    "dtok_min": -2791,
+    "dtok_max": -729,
+    "dtok_median": -1456.0,
+    "n_ff_correct": 12,
+    "flip_rate_given_ff_correct": 0.4166666666666667
+   },
+   {
+    "decile": 2,
+    "n": 50,
+    "flips": 10,
+    "flip_rate": 0.2,
+    "dtok_min": -683,
+    "dtok_max": -329,
+    "dtok_median": -422.5,
+    "n_ff_correct": 43,
+    "flip_rate_given_ff_correct": 0.23255813953488372
+   },
+   {
+    "decile": 3,
+    "n": 50,
+    "flips": 7,
+    "flip_rate": 0.14,
+    "dtok_min": -329,
+    "dtok_max": -240,
+    "dtok_median": -280.5,
+    "n_ff_correct": 39,
+    "flip_rate_given_ff_correct": 0.1794871794871795
+   },
+   {
+    "decile": 4,
+    "n": 50,
+    "flips": 5,
+    "flip_rate": 0.1,
+    "dtok_min": -239,
+    "dtok_max": -179,
+    "dtok_median": -206.5,
+    "n_ff_correct": 48,
+    "flip_rate_given_ff_correct": 0.10416666666666667
+   },
+   {
+    "decile": 5,
+    "n": 50,
+    "flips": 6,
+    "flip_rate": 0.12,
+    "dtok_min": -178,
+    "dtok_max": -140,
+    "dtok_median": -158.0,
+    "n_ff_correct": 45,
+    "flip_rate_given_ff_correct": 0.13333333333333333
+   },
+   {
+    "decile": 6,
+    "n": 50,
+    "flips": 4,
+    "flip_rate": 0.08,
+    "dtok_min": -140,
+    "dtok_max": -110,
+    "dtok_median": -124.0,
+    "n_ff_correct": 49,
+    "flip_rate_given_ff_correct": 0.08163265306122448
+   },
+   {
+    "decile": 7,
+    "n": 50,
+    "flips": 3,
+    "flip_rate": 0.06,
+    "dtok_min": -109,
+    "dtok_max": -71,
+    "dtok_median": -88.5,
+    "n_ff_correct": 49,
+    "flip_rate_given_ff_correct": 0.061224489795918366
+   },
+   {
+    "decile": 8,
+    "n": 50,
+    "flips": 2,
+    "flip_rate": 0.04,
+    "dtok_min": -71,
+    "dtok_max": -25,
+    "dtok_median": -53.5,
+    "n_ff_correct": 49,
+    "flip_rate_given_ff_correct": 0.04081632653061224
+   },
+   {
+    "decile": 9,
+    "n": 50,
+    "flips": 2,
+    "flip_rate": 0.04,
+    "dtok_min": -24,
+    "dtok_max": 69,
+    "dtok_median": 0.0,
+    "n_ff_correct": 35,
+    "flip_rate_given_ff_correct": 0.05714285714285714
+   },
+   {
+    "decile": 10,
+    "n": 50,
+    "flips": 8,
+    "flip_rate": 0.16,
+    "dtok_min": 75,
+    "dtok_max": 2664,
+    "dtok_median": 226.0,
+    "n_ff_correct": 38,
+    "flip_rate_given_ff_correct": 0.21052631578947367
+   }
+  ],
+  "by_level": [
+   {
+    "level": 1,
+    "n": 43,
+    "flips": 0,
+    "flip_rate": 0.0,
+    "rescues": 1,
+    "n_ff_correct": 40,
+    "flip_rate_given_ff_correct": 0.0
+   },
+   {
+    "level": 2,
+    "n": 90,
+    "flips": 4,
+    "flip_rate": 0.044444444444444446,
+    "rescues": 5,
+    "n_ff_correct": 82,
+    "flip_rate_given_ff_correct": 0.04878048780487805
+   },
+   {
+    "level": 3,
+    "n": 105,
+    "flips": 10,
+    "flip_rate": 0.09523809523809523,
+    "rescues": 3,
+    "n_ff_correct": 95,
+    "flip_rate_given_ff_correct": 0.10526315789473684
+   },
+   {
+    "level": 4,
+    "n": 128,
+    "flips": 15,
+    "flip_rate": 0.1171875,
+    "rescues": 9,
+    "n_ff_correct": 107,
+    "flip_rate_given_ff_correct": 0.14018691588785046
+   },
+   {
+    "level": 5,
+    "n": 134,
+    "flips": 23,
+    "flip_rate": 0.17164179104477612,
+    "rescues": 10,
+    "n_ff_correct": 83,
+    "flip_rate_given_ff_correct": 0.27710843373493976
+   }
+  ]
+ },
+ "gate": {
+  "tax_ff_js_pp": 4.8,
+  "mcnemar_p": 0.009682849923057572,
+  "threshold_pp": 3.0,
+  "alpha": 0.05,
+  "PASS": true
+ },
+ "truncation_flags": {
+  "FF": 0.082,
+  "JS": 0.052,
+  "JC": 0.166
+ }
+}
