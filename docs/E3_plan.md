@@ -116,6 +116,13 @@ paired items, a half recovery likely is not (power ~30–40%).
 - **Why validity collapses:** steering −b̂ reinstates FF *style* inside the JSON string. Markdown headers/bold in the reasoning rise 19 → 61 (FF: 100) and raw newlines 48 → 81 (FF: 100), which strict JSON rejects. The JSON scaffold itself survives (84 vs 76 outputs start with `{"reasoning": "`). So b̂ carries "terse / unformatted" style as well as length. Subtracting it overshoots length (≈ 3× JS, 2× FF) and undoes the format's stylistic discipline, which confounds the necessity test at this dose.
 - Per the rule, the freeze is blocked and nothing touches MATH-500. The rest of the dev grid (FF+b, α ∈ {0.5, 1.5, 2}, random controls, E3-F) finishes before options go to the user.
 
+## Decision after the first dev readout (user, 2026-10-07): sufficiency arm only
+- **JS − ½k·b̂ also fails the safety rule.** Its length matches FF exactly (612 vs 614), but lenient validity drops 17 pp (28% → 11%) and markdown rises. The necessity arm is therefore **not run on MATH-500**; the dev dose table is reported descriptively.
+- **FF + k·b̂ passes the rule.** On dev: 614 → 438 median tokens (JS: 419), mv acc 78 → 77, no degeneration. Random FF + k·r̂₀: 600 tokens, 76.
+- **Remove-f (E3-F) is not usable:** all 100 outputs truncate at 3,072 tokens and accuracy is 0. It's only an upper bound.
+- **Dev grid trimmed:** the JS α = 1.5 run was stopped at 81/100 and is excluded (`*.partial_stopped`). JS α = 2 and JS r̂₁/r̂₂ are dropped as moot. Added FF + b at α ∈ {0.5, 1.5, 2} and FF r̂₁/r̂₂.
+- **Eval:** E3-S and E3-Sr at α = 1 (frozen via `analysis_e3 --stage freeze`). E3-S is judged; E3-Sr gets math-verify labels only. Criteria S1 and S2 as approved. Pipeline: `scripts/run_e3_eval.sh`.
+
 ## Decisions as originally posed
 - **D-E3-1 backend:** vLLM + hook (requires step 3 to pass) vs HF-only.
 - **D-E3-2 eval scope:** judge all four conditions, or judge E3-N/E3-S only and score the random controls with math-verify only.
