@@ -1,0 +1,21 @@
+{
+ "generator_tag": "qwen3-4b-nf4",
+ "n": 100,
+ "three_way_agreement": 0.78,
+ "pairwise": {
+  "s0_s1": 0.86,
+  "s0_s2": 0.86,
+  "s1_s2": 0.84
+ },
+ "by_condition": {
+  "FF": 26,
+  "JC": 42,
+  "JS": 32
+ },
+ "label_counts_seed0": {
+  "EQUIVALENT": 22,
+  "NOT_EQUIVALENT": 65,
+  "FAILED": 13
+ },
+ "n_any_failed": 24
+}

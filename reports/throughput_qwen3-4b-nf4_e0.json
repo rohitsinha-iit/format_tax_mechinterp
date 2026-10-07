@@ -14,5 +14,37 @@
    "max_num_seqs": 8,
    "seed": 0
   }
+ },
+ "JS": {
+  "n": 500,
+  "out_tokens": 329105,
+  "wall_s": 2999.511502981186,
+  "tok_per_s": 109.7195325548529,
+  "engine": {
+   "model": "Qwen/Qwen3-4B",
+   "quantization": "bitsandbytes",
+   "dtype": "bfloat16",
+   "max_model_len": 4096,
+   "gpu_memory_utilization": 0.8,
+   "enforce_eager": true,
+   "max_num_seqs": 8,
+   "seed": 0
+  }
+ },
+ "JC": {
+  "n": 500,
+  "out_tokens": 416823,
+  "wall_s": 3763.8823845386505,
+  "tok_per_s": 110.74283344034173,
+  "engine": {
+   "model": "Qwen/Qwen3-4B",
+   "quantization": "bitsandbytes",
+   "dtype": "bfloat16",
+   "max_model_len": 4096,
+   "gpu_memory_utilization": 0.8,
+   "enforce_eager": true,
+   "max_num_seqs": 8,
+   "seed": 0
+  }
  }
 }

@@ -16,3 +16,76 @@
 [2026-10-06T11:09:02+00:00]   130/143 judged, 13.2 tok/s, 135.3 min
 [2026-10-06T11:13:37+00:00]   140/143 judged, 13.1 tok/s, 139.9 min
 [2026-10-06T11:16:16+00:00] done seed=0: {'n': 143, 'out_tokens': 112404, 'wall_s': 8550.068846464157, 'tok_per_s': 13.146560807692698}
+[2026-10-06T13:53:53+00:00] judge qwen3-4b-nf4 FF: 143 items (103 mv_wrong, 40 calib); 143 done
+[2026-10-06T13:53:53+00:00] judge qwen3-4b-nf4 JS: 175 items (139 mv_wrong, 36 calib); 0 done
+[2026-10-06T13:53:53+00:00] judge qwen3-4b-nf4 JC: 235 items (205 mv_wrong, 30 calib); 0 done
+[2026-10-06T13:54:22+00:00] HF judge loaded: {'backend': 'hf-transformers', 'max_model_len': 4096, 'batch_size': 1, 'hf_model': {'num_hidden_layers': 36, 'hidden_size': 4096, 'tie_word_embeddings': False, 'quantization_config': {'quant_method': <QuantizationMethod.BITS_AND_BYTES: 'bitsandbytes'>, '_load_in_8bit': False, '_load_in_4bit': True, 'llm_int8_threshold': 6.0, 'llm_int8_skip_modules': None, 'llm_int8_enable_fp32_cpu_offload': False, 'llm_int8_has_fp16_weight': False, 'bnb_4bit_quant_type': 'nf4', 'bnb_4bit_use_double_quant': True, 'bnb_4bit_compute_dtype': 'bfloat16', 'bnb_4bit_quant_storage': 'uint8', 'load_in_4bit': True, 'load_in_8bit': False}, 'attn_implementation': 'sdpa', 'n_layers_module': 36}}
+[2026-10-06T13:54:23+00:00] judging 175 items seed=0 backend=hf -> /mnt/d/NeuriAI/Assignment3/q2/format-tax-mi/outputs/qwen3-4b-nf4/judge/e0_JS_judge_seed0.jsonl
+[2026-10-06T14:06:41+00:00]   10/175 judged, 13.2 tok/s, 12.3 min
+[2026-10-06T14:18:25+00:00]   20/175 judged, 13.1 tok/s, 24.0 min
+[2026-10-06T14:28:55+00:00]   30/175 judged, 13.2 tok/s, 34.5 min
+[2026-10-06T14:42:45+00:00]   40/175 judged, 13.2 tok/s, 48.4 min
+[2026-10-06T15:00:32+00:00]   50/175 judged, 13.2 tok/s, 66.1 min
+[2026-10-06T15:16:38+00:00]   60/175 judged, 13.2 tok/s, 82.2 min
+[2026-10-06T15:28:19+00:00]   70/175 judged, 13.2 tok/s, 93.9 min
+[2026-10-06T15:38:50+00:00]   80/175 judged, 13.2 tok/s, 104.4 min
+[2026-10-06T15:45:33+00:00]   90/175 judged, 13.2 tok/s, 111.2 min
+[2026-10-06T15:57:06+00:00]   100/175 judged, 13.2 tok/s, 122.7 min
+[2026-10-06T16:05:55+00:00]   110/175 judged, 13.2 tok/s, 131.5 min
+[2026-10-06T16:15:23+00:00]   120/175 judged, 13.2 tok/s, 141.0 min
+[2026-10-06T16:29:42+00:00]   130/175 judged, 13.2 tok/s, 155.3 min
+[2026-10-06T16:35:44+00:00]   140/175 judged, 13.2 tok/s, 161.3 min
+[2026-10-06T16:39:44+00:00]   150/175 judged, 13.2 tok/s, 165.3 min
+[2026-10-06T16:43:35+00:00]   160/175 judged, 13.2 tok/s, 169.2 min
+[2026-10-06T16:48:10+00:00]   170/175 judged, 13.2 tok/s, 173.8 min
+[2026-10-06T16:50:25+00:00] done seed=0: {'n': 175, 'out_tokens': 139563, 'wall_s': 10562.04956150055, 'tok_per_s': 13.213628584807767}
+[2026-10-06T16:50:27+00:00] judging 235 items seed=0 backend=hf -> /mnt/d/NeuriAI/Assignment3/q2/format-tax-mi/outputs/qwen3-4b-nf4/judge/e0_JC_judge_seed0.jsonl
+[2026-10-06T17:01:56+00:00]   10/235 judged, 13.4 tok/s, 11.5 min
+[2026-10-06T17:08:14+00:00]   20/235 judged, 13.3 tok/s, 17.8 min
+[2026-10-06T17:17:58+00:00]   30/235 judged, 13.3 tok/s, 27.5 min
+[2026-10-06T17:23:45+00:00]   40/235 judged, 13.3 tok/s, 33.3 min
+[2026-10-06T17:31:16+00:00]   50/235 judged, 13.3 tok/s, 40.8 min
+[2026-10-06T17:40:23+00:00]   60/235 judged, 13.3 tok/s, 49.9 min
+[2026-10-06T17:49:43+00:00]   70/235 judged, 13.3 tok/s, 59.3 min
+[2026-10-06T18:01:51+00:00]   80/235 judged, 13.3 tok/s, 71.4 min
+[2026-10-06T18:13:49+00:00]   90/235 judged, 13.3 tok/s, 83.4 min
+[2026-10-06T18:20:13+00:00]   100/235 judged, 13.3 tok/s, 89.8 min
+[2026-10-06T18:34:26+00:00]   110/235 judged, 13.3 tok/s, 104.0 min
+[2026-10-06T18:44:33+00:00]   120/235 judged, 13.3 tok/s, 114.1 min
+[2026-10-06T18:55:55+00:00]   130/235 judged, 13.3 tok/s, 125.5 min
+[2026-10-06T19:05:00+00:00]   140/235 judged, 13.3 tok/s, 134.5 min
+[2026-10-06T19:16:17+00:00]   150/235 judged, 13.3 tok/s, 145.8 min
+[2026-10-06T19:23:02+00:00]   160/235 judged, 13.2 tok/s, 152.6 min
+[2026-10-06T19:30:54+00:00]   170/235 judged, 13.2 tok/s, 160.4 min
+[2026-10-06T19:35:04+00:00]   180/235 judged, 13.2 tok/s, 164.6 min
+[2026-10-06T19:41:50+00:00]   190/235 judged, 13.2 tok/s, 171.4 min
+[2026-10-06T19:49:01+00:00]   200/235 judged, 13.2 tok/s, 178.6 min
+[2026-10-06T20:01:39+00:00]   210/235 judged, 13.2 tok/s, 191.2 min
+[2026-10-06T20:05:36+00:00]   220/235 judged, 13.2 tok/s, 195.2 min
+[2026-10-06T20:10:19+00:00]   230/235 judged, 13.2 tok/s, 199.9 min
+[2026-10-06T20:12:56+00:00] done seed=0: {'n': 235, 'out_tokens': 159775, 'wall_s': 12148.545004844666, 'tok_per_s': 13.151780722406183}
+[2026-10-06T20:14:24+00:00] HF judge loaded: {'backend': 'hf-transformers', 'max_model_len': 4096, 'batch_size': 1, 'hf_model': {'num_hidden_layers': 36, 'hidden_size': 4096, 'tie_word_embeddings': False, 'quantization_config': {'quant_method': <QuantizationMethod.BITS_AND_BYTES: 'bitsandbytes'>, '_load_in_8bit': False, '_load_in_4bit': True, 'llm_int8_threshold': 6.0, 'llm_int8_skip_modules': None, 'llm_int8_enable_fp32_cpu_offload': False, 'llm_int8_has_fp16_weight': False, 'bnb_4bit_quant_type': 'nf4', 'bnb_4bit_use_double_quant': True, 'bnb_4bit_compute_dtype': 'bfloat16', 'bnb_4bit_quant_storage': 'uint8', 'load_in_4bit': True, 'load_in_8bit': False}, 'attn_implementation': 'sdpa', 'n_layers_module': 36}}
+[2026-10-06T20:14:25+00:00] judging 100 items seed=1 backend=hf -> /mnt/d/NeuriAI/Assignment3/q2/format-tax-mi/outputs/qwen3-4b-nf4/judge/selfcons_seed1.jsonl
+[2026-10-06T20:23:39+00:00]   10/100 judged, 12.8 tok/s, 9.2 min
+[2026-10-06T20:32:16+00:00]   20/100 judged, 12.9 tok/s, 17.9 min
+[2026-10-06T20:43:39+00:00]   30/100 judged, 13.0 tok/s, 29.2 min
+[2026-10-06T20:53:48+00:00]   40/100 judged, 13.0 tok/s, 39.4 min
+[2026-10-06T21:02:24+00:00]   50/100 judged, 13.0 tok/s, 48.0 min
+[2026-10-06T21:10:34+00:00]   60/100 judged, 13.0 tok/s, 56.1 min
+[2026-10-06T21:19:39+00:00]   70/100 judged, 13.0 tok/s, 65.2 min
+[2026-10-06T21:29:10+00:00]   80/100 judged, 13.0 tok/s, 74.7 min
+[2026-10-06T21:35:48+00:00]   90/100 judged, 13.0 tok/s, 81.4 min
+[2026-10-06T21:46:31+00:00]   100/100 judged, 13.0 tok/s, 92.1 min
+[2026-10-06T21:46:31+00:00] done seed=1: {'n': 100, 'out_tokens': 71889, 'wall_s': 5525.818806886673, 'tok_per_s': 13.009655674993677}
+[2026-10-06T21:46:32+00:00] judging 100 items seed=2 backend=hf -> /mnt/d/NeuriAI/Assignment3/q2/format-tax-mi/outputs/qwen3-4b-nf4/judge/selfcons_seed2.jsonl
+[2026-10-06T21:54:18+00:00]   10/100 judged, 12.8 tok/s, 7.8 min
+[2026-10-06T22:08:34+00:00]   20/100 judged, 12.8 tok/s, 22.0 min
+[2026-10-06T22:17:03+00:00]   30/100 judged, 12.8 tok/s, 30.5 min
+[2026-10-06T22:26:48+00:00]   40/100 judged, 12.9 tok/s, 40.3 min
+[2026-10-06T22:40:26+00:00]   50/100 judged, 12.9 tok/s, 53.9 min
+[2026-10-06T22:49:06+00:00]   60/100 judged, 12.8 tok/s, 62.6 min
+[2026-10-06T22:58:04+00:00]   70/100 judged, 12.9 tok/s, 71.5 min
+[2026-10-06T23:09:10+00:00]   80/100 judged, 12.8 tok/s, 82.6 min
+[2026-10-06T23:21:13+00:00]   90/100 judged, 12.9 tok/s, 94.7 min
+[2026-10-06T23:34:26+00:00]   100/100 judged, 12.9 tok/s, 107.9 min
+[2026-10-06T23:34:26+00:00] done seed=2: {'n': 100, 'out_tokens': 83405, 'wall_s': 6474.250593423843, 'tok_per_s': 12.882572090230461}

@@ -1,0 +1,21 @@
+{
+ "tag": "qwen3-4b-nf4",
+ "n_rows": 98,
+ "by_category": {
+  "flip": 48,
+  "not_equiv": 30,
+  "calib": 20
+ },
+ "pool_sizes": {
+  "flip": 48,
+  "not_equiv": 339,
+  "calib": 106
+ },
+ "shortfall": {
+  "flip": {
+   "wanted": 50,
+   "available": 48
+  }
+ },
+ "n_judge_failed_mv_wrong": 60
+}
