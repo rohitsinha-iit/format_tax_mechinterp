@@ -9,5 +9,27 @@
   "out_tokens": 69540,
   "wall_s": 894.1339285373688,
   "tok_per_s": 77.77358377816405
+ },
+ "dev_FF_none_a0": {
+  "hook_tokens": 0,
+  "expected_min": 110593,
+  "prompt_tokens": 13057,
+  "decode_tokens": 97536,
+  "OK": true,
+  "n": 100,
+  "out_tokens": 97636,
+  "wall_s": 830.4351673126221,
+  "tok_per_s": 117.57209213087717
+ },
+ "dev_JS_minus_b_a1": {
+  "hook_tokens": 167732,
+  "expected_min": 167651,
+  "prompt_tokens": 21569,
+  "decode_tokens": 146082,
+  "OK": true,
+  "n": 100,
+  "out_tokens": 146182,
+  "wall_s": 1231.7168321609497,
+  "tok_per_s": 118.681499012671
  }
 }

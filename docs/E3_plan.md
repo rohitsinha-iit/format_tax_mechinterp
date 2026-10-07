@@ -101,6 +101,21 @@ paired items, a half recovery likely is not (power ~30–40%).
 - **Random control on eval:** r̂₀ (seed 100). r̂₁ and r̂₂ are used on dev only.
 - **Safety rule for α = 1** (fixed before any steered output was inspected): on dev, for JS−b and FF+b, the degenerate rate (truncated with a repetitive or blank tail) rises by ≤ 5 pp over unsteered, and JS−b lenient validity drops by ≤ 5 pp. Otherwise STOP and report.
 
+## Dev calibration, first readout (2026-10-07; full table in reports/e3_dev_qwen3-4b-nf4.md when done)
+- **Hook on decode steps verified:** dev_JS_minus_b_a1 hook tokens 167,732 ≥ prompt + fed-back generated tokens 167,651 (the excess is vLLM preemption recompute).
+- **α = 1 necessity arm FAILS the safety rule.** JS−k·b̂ on dev:
+
+  | measure | JS | JS−k·b̂ |
+  |---|---|---|
+  | median output tokens (FF: 614) | 419 | 1,266 |
+  | median reasoning tokens | 250 | 700 |
+  | truncation | 3 | 19 (1 degenerate) |
+  | lenient JSON validity | 28% | 2% (drop 26 pp; limit 5 pp) |
+  | mv accuracy | 73% | 63% |
+
+- **Why validity collapses:** steering −b̂ reinstates FF *style* inside the JSON string. Markdown headers/bold in the reasoning rise 19 → 61 (FF: 100) and raw newlines 48 → 81 (FF: 100), which strict JSON rejects. The JSON scaffold itself survives (84 vs 76 outputs start with `{"reasoning": "`). So b̂ carries "terse / unformatted" style as well as length. Subtracting it overshoots length (≈ 3× JS, 2× FF) and undoes the format's stylistic discipline, which confounds the necessity test at this dose.
+- Per the rule, the freeze is blocked and nothing touches MATH-500. The rest of the dev grid (FF+b, α ∈ {0.5, 1.5, 2}, random controls, E3-F) finishes before options go to the user.
+
 ## Decisions as originally posed
 - **D-E3-1 backend:** vLLM + hook (requires step 3 to pass) vs HF-only.
 - **D-E3-2 eval scope:** judge all four conditions, or judge E3-N/E3-S only and score the random controls with math-verify only.

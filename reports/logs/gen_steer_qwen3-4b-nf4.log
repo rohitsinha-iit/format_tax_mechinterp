@@ -25,3 +25,14 @@
 [2026-10-07T07:47:14+00:00] generating dev_FF_none_a0 (100 items)
 [2026-10-07T07:49:16+00:00]   25 done, 11071 out tokens, 90.5 tok/s, 2.0 min
 [2026-10-07T07:53:36+00:00]   50 done, 39960 out tokens, 104.6 tok/s, 6.4 min
+[2026-10-07T07:57:49+00:00]   75 done, 72693 out tokens, 114.5 tok/s, 10.6 min
+[2026-10-07T08:01:04+00:00]   100 done, 97636 out tokens, 117.6 tok/s, 13.8 min
+[2026-10-07T08:01:04+00:00] finished dev_FF_none_a0: {'n': 100, 'out_tokens': 97636, 'wall_s': 830.4351673126221, 'tok_per_s': 117.57209213087717}; hook tokens 0 vs expected ≥110593 -> OK
+[2026-10-07T08:01:09+00:00] generating dev_JS_minus_b_a1 (100 items)
+[2026-10-07T08:04:03+00:00]   25 done, 17296 out tokens, 99.3 tok/s, 2.9 min
+[2026-10-07T08:10:12+00:00]   50 done, 58293 out tokens, 107.2 tok/s, 9.1 min
+[2026-10-07T08:15:39+00:00]   75 done, 99762 out tokens, 114.6 tok/s, 14.5 min
+[2026-10-07T08:21:40+00:00]   100 done, 146182 out tokens, 118.7 tok/s, 20.5 min
+[2026-10-07T08:21:40+00:00] finished dev_JS_minus_b_a1: {'n': 100, 'out_tokens': 146182, 'wall_s': 1231.7168321609497, 'tok_per_s': 118.681499012671}; hook tokens 167732 vs expected ≥167651 -> OK
+[2026-10-07T08:21:41+00:00] generating dev_FF_plus_b_a1 (100 items)
+[2026-10-07T08:23:04+00:00]   25 done, 8485 out tokens, 102.4 tok/s, 1.4 min
